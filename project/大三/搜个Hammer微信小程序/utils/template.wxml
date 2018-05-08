@@ -1,0 +1,15 @@
+  <template name="pic">
+    <view class="logo-p">
+      <image class="logo {{rotate?'rotateN shadow':''}}" src='../../img/logo.png'></image>
+      <image class="logo logo2 {{rotate?'rotateN shadow':''}}" src='../../img/logo.png'></image>
+    </view>
+    <view class="smile">
+      <canvas canvas-id='smile'></canvas>
+    </view>
+  </template>
+
+  <template name="footer">
+    <view class="footer">
+      <view>如果对页面有什么建议请联系我: <text>twl@tangwanli.com</text></view>
+    </view>
+  </template>

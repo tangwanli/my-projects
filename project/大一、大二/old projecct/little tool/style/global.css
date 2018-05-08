@@ -1,0 +1,78 @@
+  body {
+    margin: 0 auto;
+  }
+
+  /* 轮播图 */
+  #carousel-figure { 
+    position: relative;  
+    height: 300px;
+    background: #86bfb0;
+  }
+
+  .ul-bag {
+    position: relative;
+    left: 500px;
+    top: 50px;
+    width: 680px;
+    height: 200px;
+    overflow: hidden;
+  }
+
+  /* 这里不为ul设置宽度，在js里面设置，可以保证无论有多少个li都有足够的宽度排成一排 */
+  .pic-move {
+    position: absolute; 
+    top: 0;
+    left: 0;       
+  }
+
+  .pic-move li {    
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+
+  .buttom-left, .buttom-right {
+    position: absolute;
+    width: 40px;
+    height: 50px;
+    margin-top: 60px;
+    background: #4d4dc8;
+    text-indent: 5px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+
+  .buttom-left {
+    top: 190px;
+    left: 700px;
+  }
+
+  .buttom-right {
+    top: 190px;
+    left: 900px;
+  }
+
+
+  /* cookie保存登陆信息 */
+  #secend-part {
+    height: 300px;
+    background: #77b5cc;
+  }
+  
+  .sa-ck {
+    padding: 100px 0 0 500px;   
+  }
+
+  .sa-ck label {
+    font-weight: bold;
+    color: #6ee1a4;
+  }
+
+  .sa-ck span {
+    border: 1px dotted black;
+    background: #0b8180;
+    cursor: pointer;
+    color: #e6f18d;
+  }

@@ -1,0 +1,136 @@
+  <!DOCTYPE html>
+  <html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>图片切换动画版、雪花效果</title> 
+    <base target="_blank">
+    <style type="text/css">
+    html {height: 100%;}
+    body {background: blue;}
+    ul,li {margin:0;padding: 0;}
+    /* change-img */
+    .change-img {position: relative;width: 400px;height: 300px;margin: 180px auto;transform-style: preserve-3d;perspective: 800px;font-size: 0;box-shadow: 0 0 10px #95daf4;border-radius:50%;overflow: hidden;cursor: pointer;}
+    .change-img:hover {box-shadow: 0 0 10px 10px #95daf4;}
+    .change-img span {display:inline-block;width: 10px;height: 300px;background-size: contain;transition: 1s ease-in-out;}
+    
+    /* 雪花效果 */
+    @keyframes snow {
+      from {
+        background-position: 0 0, 0 0;
+      }
+      to {
+        background-position: 500px 500px, 1500px 500px;
+      }
+    }
+    .snow {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: url("../../images/snow1.png"),url("../../images/snow1.png");
+      animation: 10s snow linear infinite;
+      pointer-events: none;
+    }
+    </style>
+
+    <script src="../../jquery-1.9.1.js" type="text/javascript"></script>
+
+  </head>
+
+  <body>
+
+  <div class="change-img">
+  </div>
+
+  <div class="snow"></div>
+
+  <script type="text/javascript">
+     (function() {
+
+      // 关键是stateChange中改前后元素的透明度
+      var changeImg = {
+        el : null,
+        num : 0, // num代表的是一共有多少个span
+        dataArr : [],
+        nowNum : 0, // staNum代表的是第几个span
+        imgNum : 1, // staNum代表的是当前是第几个img
+
+        // 接收一个数据数组，里面存放图片的src; spanWidth为需要的span的宽度
+        init :function(el,dataArr,spanWidth) {
+          var el = el,
+              dataArr = dataArr,
+              num = Math.ceil(parseInt(el.css("width"))/spanWidth),
+              num2 = num,
+              spanStr = "",
+              initspan = dataArr[0],
+              posStr = "";
+              console.log();
+
+              this.el = el;
+              this.dataArr = dataArr;
+              this.num = num;
+
+              for ( ; num-- ; ) {
+                spanStr += "<span></span>";
+              }
+              el.append(spanStr);
+
+              var span = el.find("span");
+              span.css("background",initspan);
+              for ( ; num2-- ; ) {
+                posStr = -spanWidth*num2 + "px";
+                $(span[num2]).css("background-position-x",posStr);
+              }
+
+              setInterval(function(obj) {
+                if (obj.nowNum < obj.num) {
+                  changeImg.stateChange(obj.nowNum);
+                  obj.nowNum++;
+                } else {
+                  obj.imgNum++;
+                  if (obj.imgNum == obj.dataArr.length) {
+                    obj.imgNum = 0;
+                  }
+                  obj.nowNum = 0;
+                }
+                
+              },200,this);
+        },  
+
+        stateChange : function(nowNum) {
+          var el = this.el,
+              dataArr = this.dataArr,
+              num = this.num,
+              span = el.find("span");
+
+            if (nowNum > 0) {
+              $(span[nowNum-1]).css("opacity","1");
+            }
+            if (nowNum !== this.num-1) {
+              $(span[nowNum]).css({"opacity":"0","background-image":dataArr[this.imgNum]});
+            } else {
+              $(span[nowNum]).css({"opacity":"1","background-image":dataArr[this.imgNum]});
+            }
+        }
+       
+      };
+
+      var dataArr = ["url('../../images/wukong.jpg')",
+                     "url('../../images/boy.jpg')",
+                     "url('../../images/girl.jpg')",
+                     "url('../../images/skyhouse.jpg')",
+                     "url('../../images/skytree.jpg')",
+                     "url('../../images/skybirds.jpg')",
+                     "url('../../images/skyoasis.jpg')",
+                     "url('../../images/jiguang.jpg')"],
+          spanWidth = 10;
+
+      changeImg.init($(".change-img"),dataArr,spanWidth);
+
+
+    })();
+    </script>
+       
+  </body>
+  </html>

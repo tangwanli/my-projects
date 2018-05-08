@@ -1,0 +1,62 @@
+/* 字体样式 */
+  p { 
+    font-family: "Georgia", "Times New Roman", "Songti SC", "SimSun", "serif"; 
+  }
+
+  h1, h2, h3, h4, h5, h6 { 
+    font-family: "Lucida Grande", "Helvetica Neue", "Arial",   "Hiragino Sans GB",      "Noto Sans CJK SC", "Heiti SC", "Microsoft YaHei", "WenQuanYi   Microhei", "sans-serif"; 
+  }
+    
+  /* 字号样式 */
+  p  { 
+    font-size: 16px; 
+  }
+
+  h1 { 
+    font-size: 2em; 
+  }
+
+  h2 { 
+    font-size: 1.8em;
+  }
+
+  h3 { 
+    font-size: 1.6em; 
+  }
+
+  h4 { 
+    font-size: 1.4em; 
+  }
+
+  h5, h6 { 
+    font-size: 1.2em; 
+  }
+    
+  /* 间距样式 */
+  p { 
+    line-height: 1.7em;
+  }
+
+  h1, h2, h3, h4, h5, h6 { 
+    ine-height: 1.5em; 
+  }
+
+  p { 
+    margin-bottom: 1.7em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: .7em;
+    margin-bottom: 0.2em;
+  }
+
+  /* 样式清除 */      
+  body, dl, dd, p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+
+  ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }

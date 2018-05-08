@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+
+    <title>login page</title> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/login.css">
+
+    <base target="_blank">
+  </head>
+  
+  <body>
+
+    <div id="header">
+        <h2></h2>
+    </div>
+
+    <div id="content">
+
+          <!-- 将action里面路径设置为Servlet处理文件，即：LoginServlet,为在xml中配置的servlet.这个路径会直接加在url后面，可以用控制台查看-->
+          <!-- 表单方法传输数据 -->
+      <form id="login-form" name="login" action="LoginServlet" method="post">
+        <label>用户名：</label><input id="username" name="textusername" type="text" placeholder="请输入用户名">
+        <br>
+        <label class="password">密码：</label><input id="password" name="textpassword" type="password" placeholder="请输入密码">
+        <br>
+        <input id="submit" type="submit" value="提交"">
+      </form>
+      <!-- 以上方法为表单传输数据的方法，下面一个为用地址重写方法传递数据 -->
+      <!--  
+        <p>地址重写方法传递数据</p>
+        <a href="LoginServlet?textusername=what & password=1234">临时提交</a>
+        <p>语法：目标地址?参数名称1=参数内容1 & 参数名称2=参数内容2</p>
+      -->
+      
+    </div>
+    
+    <script>
+    window.onload = function()
+    {
+      var submit = document.getElementById("submit");
+      // 这下面加了一个event事件对象
+      submit.onClick = function judgeInfo(event)
+    {
+        var username = document.getElementById("username").style.value;
+        var password = document.getElementById("password").style.value;
+        
+        if(username == "" || username == null)
+        {
+          console.log("请输入用户名");
+          return false;
+        }
+        if(password == "" || password == null)
+        {
+          console.log("请输入密码");
+          return false;
+        }
+    }
+    }
+    
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+input {width: 300px; height: 30px; padding: 5px; border:1px solid #f90; font-size: 16px;}
+ul {border:1px solid #f90; width: 310px; margin: 0;padding: 0; display: none;}
+li a { line-height: 30px; padding: 5px; text-decoration: none; color: black; display: block;}
+li a:hover{ background: #f90; color: white; }
+</style>
+<script src="jquery-3.1.1.js" type="text/javascript"></script>
+<script>
+  
+  // 由于从jsonp中读取出来的函数为全局函数，所以这个函数也该设置为全局函数
+  function twl(data) {
+	var str = "";
+	// 数据是存在s中的
+	if (data.s.length) {
+		$("ul").css("display","block");
+		for (var i=0; i<data.s.length; i++) {
+			str += '<li><a target="_blank" href="http://www.baidu.com/s?wd='+data.s[i]+'">'+ data.s[i] +'</a></li>';
+		}
+		$("ul").append(str);
+	} else {
+		$("ul").css("display","none");
+	}
+  }
+
+  $(function(){
+  	// 这个onkeyup事件处理函数，只能在页面加载完了之后在执行
+  $("input")[0].onkeyup = function() {
+	if ( this.value != '' ) {
+		$("ul").find("li").remove();
+		var str = "<script src='" + "http://suggestion.baidu.com/su?wd=" + this.value + "&cb=twl'>"+"</"+"script>";
+		$("body").append(str);
+	} else {
+		$("ul").css("display","none");
+	}	
+  }
+});
+
+</script>
+</head>
+
+<body>
+	<input type="text">
+	<ul></ul>
+</body>
+</html>

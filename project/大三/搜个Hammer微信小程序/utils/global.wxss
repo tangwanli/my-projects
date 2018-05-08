@@ -1,0 +1,26 @@
+/**index.wxss 1rpx=0.43px**/
+.logo-p {
+  position: absolute;
+}
+
+.logo {
+  width: 230rpx;
+  height: 230rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 30rpx #ebf7ba;
+}
+
+.smile canvas {
+  width: 680rpx;
+  height: 578rpx;
+  box-sizing: border-box;
+}
+
+.footer {
+  position: fixed;
+  bottom: 20rpx;
+  font-size: 28rpx;
+  font-style: oblique;
+  color: gray;
+  text-shadow: 0 0 2rpx red;
+}

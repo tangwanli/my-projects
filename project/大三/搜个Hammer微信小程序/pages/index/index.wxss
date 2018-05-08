@@ -1,0 +1,48 @@
+@import "../../utils/global.wxss";
+
+/* 点击的时候加给.userinfo button和.logo */
+.welcome {
+  font-size: 50rpx;
+  transform: rotateX(40deg);
+  -webkit-transform: rotateX(40deg);
+  text-shadow: 0 0 2rpx #627908;
+  color: gray;
+}
+
+.userBtn {
+  width: 180rpx;
+  height: 100rpx;
+  padding: 0;
+  border-radius: 15%;
+  background: linear-gradient(top, gray,yellow);
+  background: -moz-linear-gradient(top, gray,yellow);
+  background: -webkit-linear-gradient(top, #53d6d5,#39aec6,#84d9d2);
+  color: #b7e968;
+  transition: 1s;
+  box-shadow: 0 0 10rpx #ebf7ba;
+}
+
+.rotateN {
+  transform: rotate(720deg);
+}
+.shadow {
+  box-shadow: 0 0 50rpx #dff294;
+}
+
+.smile {
+  margin-top: 100rpx;
+}
+
+.logo-p {
+  top: 380rpx;
+  left: 75rpx;
+}
+
+.logo {
+  transition: 1s linear;
+}
+
+.logo2 {
+  margin-left: 110rpx;
+  transition: 1s linear;
+}

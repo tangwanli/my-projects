@@ -1,0 +1,192 @@
+
+  <!DOCTYPE html>
+  <html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>图片时钟</title> 
+    <base target="_blank">
+    <style type="text/css">
+      div {margin: 0 auto;margin-top:180px;overflow:hidden;position: relative;}
+      li {display:inline-block;list-style: none;}
+      ul,li,img{padding:0;margin:0;border: none;font-size: 0px;position: relative;}
+    </style>
+
+    <script src="../../jquery-1.9.1.js" type="text/javascript"></script>
+
+  </head>
+
+  <body>
+
+  <div></div>
+  <input type="text"><button>GO</button>
+
+  <script type="text/javascript">
+    (function() {
+      // clock工具使用方法。直接调用clock.init(el);el为要生成图片的父元素。图片直接变换
+      var clock = {
+        el : null, // 输入的元素
+        num : 8, // img个数
+        firstImg : null, // 第一排的img集合
+        lastImg : null, // 第二排的img集合
+        firstStr : "00:00:00", // 默认的时间，第一排的所有img
+        elHeight : "0px", // 定义div即li的高度
+        arr : [], // 定义一个空数组，用来存放相同字母的index
+        
+        // 初始化，将图片动态加入dom
+        init : function(el) {
+          this.el = el;
+          el.append("<ul></ul>");
+          var emptyImg = '<img src="../../images/图片时钟/0.JPG">',
+              num = this.num,
+              ul = el.find("ul");
+              
+          // 下面两个为动态生成li和img
+          console.log(ul);
+          for ( ; num-- ; ) {
+            ul.append("<li></li>");
+            //el.append(emptyImg);
+          }
+          var li = ul.find("li"); // 找到ul下面所有的li
+          li.append(emptyImg).append(emptyImg); // 在所有li下面都生成两个img
+
+
+          this.firstImg = li.find("img:first-child"); // img为jq对象.找到所有li下面的第一个img
+          this.lastImg = li.find("img:last-child"); // img为jq对象.找到所有li下面的第一个img
+          console.log(this.firstImg);
+          // 动态生成父元素和li的宽高(设置li宽高是为了让一个li中的两个img竖直排列)
+          this.firstImg[0].onload = function() { // img[0]为dom对象
+            var imgStyle = window.getComputedStyle(el.find("img:first")[0]),
+                elWidth = parseFloat(imgStyle.width) * clock.num + 10 + "px", // 由于图片不是全部宽度一致，这里加了10px，防止出问题
+                elHeight = parseFloat(imgStyle.height) * 1 + "px";
+                clock.elHeight = elHeight;
+                el.find("li").css("width",imgStyle.width);
+            el.css({"width":elWidth, "height":elHeight});
+          };
+
+          
+
+          this.time();
+          clearInterval(timer);
+          var timer = setInterval( function() {
+            clock.time();
+            // 下面这个为点的闪烁。在外层定时器的里面设置的定时器
+            clock.firstImg[2].src = "../../images/图片时钟/colon.JPG";
+            clock.firstImg[5].src = "../../images/图片时钟/colon.JPG";
+            setTimeout( function() {
+                clock.firstImg[2].src = "../../images/图片时钟/colon1.JPG";
+                clock.firstImg[5].src = "../../images/图片时钟/colon1.JPG";
+            }, 500 );
+          }, 1000);
+
+        },
+
+        time : function() {
+         var nowTime = new Date(),
+              nowHour = nowTime.getHours(),
+              nowMin = nowTime.getMinutes(),
+              nowSec = nowTime.getSeconds(),
+              firstImg = this.firstImg,
+              lastImg = this.lastImg,
+              // 将时间连接成字符串,上面一串，下面一串
+              lastStr = this.toTwo(nowHour) + ":" + this.toTwo(nowMin) + ":" + this.toTwo(nowSec), // 不断更新的时间
+              num = this.num,
+              num2 = this.num,
+              num3 = this.num,
+              firstLetter = "", // 第一排str的字母
+              lastLetter = ""; // 第二排str的字母
+
+              // 给第二排li不断变换图片
+              for ( ; num-- ; ) {
+                lastLetter = lastStr.charAt(num);
+                if ( lastLetter !== ":" ) {
+                  lastImg[num].src = '../../images/图片时钟/' + lastLetter + '.JPG';
+                }
+              }
+              
+              // 找到第一排第二排li的不同元素的index，然后把第二排li的值赋给第一排li
+              this.arr = [];
+              for ( ; num2-- ; ) {
+                firstLetter = this.firstStr.charAt(num2);
+                if ( firstLetter !== lastStr.charAt(num2) ) {
+                  this.arr.push(num2);
+                }
+              }
+              
+              
+              this.move(this.arr);
+              this.firstStr = lastStr;
+              for ( ; num3-- ; ) {
+                firstLetter = this.firstStr.charAt(num3);
+                if ( firstLetter !== ":" ) {
+                  firstImg[num3].src = '../../images/图片时钟/' + firstLetter + '.JPG';
+                }
+              }
+              
+        },
+
+        // 因为，用上面的日期函数读取出来的数，如果不超过10，不会显示前面的那个0，所以需要用这个函数，来加上前面的那个0，把它变成2位数。
+        toTwo : function(time) {
+          return (time < 10) ? ("0" + time) : ("" + time);
+
+        },
+        
+        // jq动画将下一排的li移动到上面去
+        move : function(arr) {
+          
+          var len = arr.length,
+              value = 0,
+              str = "-" + this.elHeight,
+              li = this.el.find("li");
+
+          for ( ; len-- ; ) {
+            value = arr[len];
+            $(li[value]).stop().animate({"top":str}, 500, function() {
+              $(this).css("top","0px");
+            });
+          }
+
+        }
+
+      };
+
+      clock.init($("div"));
+
+      // 这个工具，直接cutDown.init(el,aimTime).el为需要显示日期的那个div(默认为input)，aimTime是字符串格式的日期
+      var cutDown = {
+        tAim : 0,
+
+        init : function(el,aimTime) {
+              this.tAim = new Date(aimTime);
+              var timer = null;
+              clearInterval(timer);
+              timer = setInterval(function() {
+                var tNow = 0,
+                    dValue = 0,
+                    str = "",
+                    tAim = cutDown.tAim;
+                tNow = new Date();
+                dValue = Math.floor((tAim - tNow)/1000); // 差值，由于(tAim - tNow)为毫秒，所以除以1000变为s
+                if (dValue >= 0) {
+                  str = Math.floor(dValue/86400) + "天" + Math.floor(dValue%86400/3600) + "时" + Math.floor(dValue%86400%3600/60) + "分" + dValue%60 +"秒";
+                el.val(str); // 这里默认el为input
+                } else {
+                  clearInterval(timer);
+                }
+              }, 1000);
+        }
+      };
+
+      $("button").click(function() {
+        var aimTime = 'June 09, 2018 12:12:12';
+        cutDown.init($("input"),$("input").val());
+      });
+
+
+
+
+    })();
+
+  </script>
+       
+  </body>
+  </html>

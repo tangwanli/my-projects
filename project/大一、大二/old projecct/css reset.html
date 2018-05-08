@@ -1,0 +1,206 @@
+﻿  <!DOCTYPE html>
+  <html lang="zh-cmn-Hans">
+  <head>
+    <!-- 指定字符编码的 meta 必须是 head 的第一个直接子元素 -->
+    <meta charset="utf-8">
+    <!-- SEO优化 -->
+    <title>Style Guide</title>         <!-- title标签放在charset之后 -->
+    <!-- 优先使用最新版本的IE 和 Chrome 内核 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="不超过150个字符">
+    <meta name="keywords" content="">
+    <meta name="author" content="twl, 771147315@qq.com">
+
+    <!-- 为移动设备添加 viewport -->
+    <!--  intial-scale:页面首次被显示是可视区域的缩放级别，取值1.0则页面按实际尺寸显示，无任何缩放 -->
+    <!--  width:可视区域的宽度，值可为数字或关键词device-width -->                           
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- iOS 图标 --><!--
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57x57-precomposed.png">
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">   -->
+    <link rel="shortcut icon" href="../images/favicon.ico">                 <!--favicon[fævɪkən]  网站图标(favorites icon)-->
+
+    <!-- 引入样式表 -->
+    <!--<link rel="stylesheet" href="#" type="text/css">  -->    <!-- 必须指明type -->
+    <!-- 定义页面所有a标签的打开方式 -->
+    <base target="_blank">
+	<style type="text/css">
+	/* 字体样式 */
+	p { 
+    font-family: "Georgia", "Times New Roman", "Songti SC", "SimSun", "serif"; 
+  }
+
+  h1, h2, h3, h4, h5, h6 { 
+    font-family: "Lucida Grande", "Helvetica Neue", "Arial",   "Hiragino Sans GB",      "Noto Sans CJK SC", "Heiti SC", "Microsoft YaHei", "WenQuanYi   Microhei", "sans-serif"; 
+  }
+	  
+	/* 字号样式 */
+	p  { 
+	  font-size: 16px; 
+	}
+
+  h1 { 
+    font-size: 2em; 
+	}
+
+  h2 { 
+	  font-size: 1.8em;
+	}
+
+  h3 { 
+    font-size: 1.6em; 
+	}
+
+  h4 { 
+	  font-size: 1.4em; 
+	}
+
+  h5, h6 { 
+	  font-size: 1.2em; 
+	}
+	  
+	/* 间距样式 */
+	p { 
+		line-height: 1.7em;
+	}
+
+  h1, h2, h3, h4, h5, h6 { 
+    line-height: 1.5em; 
+  }
+
+  p { 
+    margin-bottom: 1.7em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: .7em;
+    margin-bottom: 0.2em;
+  }
+
+  /* 样式清除 */      
+  body, dl, dd, p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+
+  img, select {
+    border: none;
+  }
+
+  /*input, textarea {
+    border: none;
+    padding: 0;
+  }*/
+
+  /* 禁止textarea框随意拉动 */
+  textarea {
+    resize: none;
+  }
+
+  ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    text-decoration:none;
+    outline: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  img {
+    vertival-align: top;
+  }
+
+  option, th, td {
+    padding: 0;
+  }
+
+  th {
+    font-weight: normal;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  /*去掉select的箭头*/
+  select {
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+  }
+
+  /*清除浮动*/
+  .clear {
+    clear: both;
+  }
+	
+	
+	</style>
+  </head>
+  
+  <body>
+    <a href="#">a标签</a>
+	<p>p标签</p>
+	<q>q标签</q>
+	<span>span标签</span>
+	<em>em标签</em>
+	<img src="../all the photos/favicon.ico" alt="favicon">
+	<form action="#" method="post">
+	  <input type="text" maxlength="20" value="输入框">
+	</form>
+	<ul>
+	  <li>1</li>
+	  <li>2</li>
+	  <li>3</li>
+	</ul>
+	<ol>
+	  <li>1</li>
+	  <li>2</li>
+	  <li>3</li>
+	</ol>
+	<select name="">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	</select>
+	<div>
+	div标签
+	</div>
+    <textarea name="" rows="10" cols="48">textarea标签</textarea>
+	<abbr title="132354">12</abbr>
+	
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="#">
+  // 共享onload事件
+  function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != "function") {
+        window.onload = func;
+    }
+    else {
+        window.onload = function() {
+            oldonload();
+            func();
+        }
+    }
+  }
+
+  </script>
+  </body>
+  
+  </html>

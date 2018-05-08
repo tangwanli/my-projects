@@ -1,0 +1,805 @@
+/*
+全局css
+ */
+
+
+
+  body {
+    background: #fff;
+  }
+
+
+
+  /* 头部 */
+  .top {
+    min-width: 1899px;
+    min-height: 119px;
+  }
+
+  .top-bag {
+    width: 1100px;
+    height: 119px;
+  }
+
+  .top-information {
+    width: 1100px;
+    height: 82px;
+    padding-top: 1.64%; 
+  }
+
+  .top-information li {
+    float: left;
+  }
+
+  .logo {
+    width: 88px;
+    height: 82px;
+  }
+
+  .bgadd2 {
+    width: 1px;
+    height: 58px;
+    margin: 1.18% 1.64% 0 1.62%;
+    background: #d9d9d9;
+  }
+
+  .com-intrbag {
+    width: 337px;
+    height: 58px;
+    padding: 1.18% 9% 0 0;
+  }
+
+  .comname {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 24px;
+    font-family: Adobe 黑体 Std R;
+    color: #333;
+  }
+
+  .comaim {
+    display: inline-block;
+    height: 29px;
+    line-height: 29px;
+    font-size: 18px;
+    font-family: Adobe 黑体 Std R;
+    color: #808080;
+  }
+
+  .tel {
+    width: 208px;
+    height: 85px;
+    padding-right: 10%;
+  }
+
+  .top-information .switch-language {
+    width: 165px;
+    height: 16px;
+    margin-top: 3.1%;
+  }
+
+  .switch-language a {
+    color: #333;
+  }
+
+  .chinese {
+    width: 69px;
+    height: 16px;
+    text-indent: 30px;
+    background: url("../images/picsprite.png") no-repeat 0 -16px;
+  }
+
+  .english {
+    width: 92px;
+    height: 16px;
+    font-family: Arial Regular;
+    text-indent: 32px;
+    background: url("../images/picsprite.png") no-repeat;
+  }
+
+
+
+  /* 导航 */
+  .nav {
+    min-width: 1899px;
+    min-height: 49px;
+    background: #10a14a;
+  }
+
+  .nav-bag {
+    width: 1100px;
+    height: 49px
+  }
+
+  .nav-block li {
+    float: left;
+    width: 121px;
+  }
+
+  .nav-block a {
+    display:inline-block;
+    width: 121px;
+    line-height: 49px;
+    text-align: center;
+  }
+
+  .actopt, .nav-block a:hover {
+    background: #0d803b;
+    text-decoration: none;
+  }
+
+
+
+  /* 主要的图片 */
+  .main-pic {
+    min-width: 1899px;
+    min-height: 588px; 
+  }
+
+  .main-picbag {
+    position: relative;
+    width: 1899px;
+    height: 588px; 
+  }
+
+  /* 轮播图 */
+  .ul-bag {
+    position: relative;
+    width: 1920px;
+    height: 588px;
+  }
+
+  .-pic-move {
+    position: absolute; 
+    top: 0;
+    left: 0;       
+  }
+
+  .-pic-move li {    
+    float: left;
+    width: 1920px;
+    height: 588px;
+    cursor: pointer;
+  }
+  
+  /* 介绍块 */
+  .com-intr {
+    position: absolute;
+    top: 23%;;
+    left: 21%;
+    width: 488px;
+    height: 310px;
+    background: #57bd80;
+    opacity:0.7;
+    color: #fefefe;
+  }
+
+  .name {
+    height: 28px;
+    padding: 41px 0 12px 30px;
+    font-size: 30px;
+    font-family: Adobe 黑体 Std R;
+    letter-spacing: 2px;
+  }
+
+  .aim {
+    height: 23px;
+    padding: 0 0 25px 30px;
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  .introduce {
+    padding: 0  0 26px 30px;
+    line-height: 18px;
+  }
+
+  .knowm {
+    width: 138px;
+    padding-left: 174px; 
+  }
+
+  .knowmore {
+    width: 136px;
+    height: 38px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    font-size: 18px;
+    background: #57bd80;
+    opacity:0.7;
+    color: #fefefe;
+    cursor: pointer;
+  }
+
+
+
+  /* 实验室介绍 */
+  .lab-intr {
+    min-width: 1899px;
+    min-height: 376px;
+    background: #f6f6f6;
+  }
+
+  .lab-bag {
+    width: 1100px;
+    height: 173px;
+    padding-top: 92px;
+  }
+
+  .lab-bag li {
+    float: left;
+    width: 173px;
+    height: 173px;
+    margin-right: 12px;
+    border-radius: 86.5px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .lab-bag .add6 {
+    margin: 0;
+  }
+
+  .labthing {
+    display: block;
+    width: 153px;
+    line-height: 47px;
+    padding-left: 10px;
+    margin-top: 122px;
+    text-align: center;
+    text-indent: 0px;
+    color: #fff;
+    background: #10a14a;
+  }
+
+  .lab-bag a:hover {
+    text-decoration: none;
+  }
+
+  .add1 {
+    background: url("../images/lab1.png") no-repeat;
+  }
+
+  .add2 {
+    background: url("../images/lab2.png") no-repeat;
+  }
+
+  .add3 {
+    background: url("../images/lab3.png") no-repeat;
+  }
+
+  .add4 {
+    background: url("../images/lab4.png") no-repeat;
+  }
+
+  .add5 {
+    background: url("../images/lab5.png") no-repeat;
+  }
+
+  .add6 {
+    background: url("../images/lab6.png") no-repeat;
+  }
+
+
+
+  /* 公司介绍 */
+  .intr-inf {
+    min-width: 1899px;
+    min-height: 448px;
+  }
+
+  .intr-infbag {
+    width: 1899px;
+    height: 448px;
+    background: url("../images/comintr.png") no-repeat;
+  }
+
+  .word-intr {
+    width: 1121px;
+    height: 448px;
+  }
+
+  .maintitle {
+    padding: 6.2% 0 0.9% 0;
+    font-size: 36px;
+    font-family: Adobe 黑体 Std R;
+    text-align: center;
+    letter-spacing: 12px;
+  }
+
+  .vicetitle {
+    padding-bottom: 2.3%;
+    font-family: Adobe 黑体 Std R;
+    text-align: center;
+  }
+
+  .detailp {
+    line-height: 32px;
+    font-size: 19px;
+  }
+
+
+
+  /* 应用领域 */
+  .application-area {
+    min-width: 1899px;
+    min-height: 727px;
+  }
+
+  .application-areabag {
+    width: 1100px;
+    height: 727px;
+  }
+
+  .area-title {
+    position: relative;
+    width: 1100px;
+    height: 48px;
+    font-family: 微软雅黑 Bold;
+    font-weight: bold;
+    font-size: 24px;
+    background: url("../images/bgline.png") no-repeat 275px 6px;
+    color: #10a14a;
+  }
+
+  .desit {
+    padding-left: 1.27%;
+    font-family: Arial Regular;
+    font-weight: Regular;
+    font-size: 20px;
+    color: #999;
+  }
+
+  .more {
+    float: right;
+    font-size: 18px;
+    color: #ff9600;
+  }
+
+  .area-list {
+    width: 1150px;
+    height: 625px;
+  }
+
+  .area-list li {
+    float: left;
+    width: 283px;
+    height: 199px;
+    padding: 0 14px 6px 0;
+  }
+
+  .area-list a:hover {
+    text-decoration: none;
+  }
+
+  .area-list .apic2, .area-list .apic5, .area-list .apic8 {
+    width: 507px;
+  }
+
+  .apic1 {
+    background: url("../images/area1.png") no-repeat;
+  }
+
+  .apic2 {
+    background: url("../images/area2.png") no-repeat;
+  }
+
+  .apic3 {
+    background: url("../images/area3.png") no-repeat;
+  }
+
+  .apic4 {
+    background: url("../images/area4.png") no-repeat;
+  }
+
+  .apic6 {
+    background: url("../images/area6.png") no-repeat;
+  }
+
+  .apic7 {
+    background: url("../images/area7.png") no-repeat;
+  }
+
+  .apic8 {
+    background: url("../images/area8.png") no-repeat;
+  }
+
+  .apic9 {
+    background: url("../images/area9.png") no-repeat;
+  }
+
+  .desita {
+    margin-top: 161px;
+    line-height: 38px;
+    background: #7b8081;
+    /* 兼容ie8 */
+    filter:alpha(opacity=60);
+    opacity: 0.6;
+    text-align: center;
+  }
+
+  .apic5 .desita {
+    margin-top: 0px;
+    line-height: 0px;
+    opacity: 1;
+    text-align: center;
+  }
+
+
+
+  /* 经典领域 */
+  .classic-area {
+    min-width: 1899px;
+    min-height: 379px;
+  }
+
+  .classic-areabag {
+    width: 1100px;
+    height: 379px;
+  }
+
+  .-area-list {
+    position: relative;
+    width: 1140px;
+    height: 138px;
+    overflow: hidden;
+  }
+
+  .pic-move {
+    position: absolute; 
+    top: 0;
+    left: 0;   
+  }
+
+  .-area-list img {
+    width: 154px;
+    height: 89px;
+  }
+
+  .-area-list li {
+    float: left;
+    width: 154px;
+    padding: 0 36px 51px 0;
+  } 
+
+  .arrow {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .buttonleft {
+    position: absolute;
+    top: -190px;
+    left: -52px;
+  }
+
+  .buttonright {
+    position: absolute;
+    top: -190px;
+    left: 1135px;
+  }
+
+  .change-dot {
+    width: 100px;
+    margin-left: 527px;
+  }
+
+  .change-dot li {
+    float: left;
+    width: 11px;
+    height: 11px;
+    margin-right: 9px;
+    border-radius: 5px;
+    background: #bfbfbf;
+    cursor: pointer;
+  }
+
+  .change-dot .actiond {
+    background: #12b681;
+  }
+
+
+
+  /* 设计团队 */
+  .design-team {
+    min-width: 1899px;
+    min-height: 498px;
+    background: #f2f2f2;
+  }
+
+  .-design-team {
+    width: 1100px;
+    height: 498px;
+  }
+
+  .teamc {
+    padding: 3.72% 0 1.1% 0;
+    text-align: center;
+    font-family: Adobe 黑体 Std R;
+    font-size: 36px;
+    letter-spacing: 12px;
+    color: #333;
+  }
+
+  .teame {
+    padding-bottom: 3.64%;
+    text-align: center;
+    font-family: Adobe 黑体 Std R;
+    letter-spacing: 5px;
+    color: #333;
+  }
+
+  .-people-intr {
+    position: relative;
+    width: 1102px;
+    height: 266px;
+    overflow: hidden;
+  }
+
+  .people-intr {
+    position: absolute;
+    top: 0;
+    left: -57px;
+    width: 1400px;
+  }
+  /* li总宽度为260px */
+  .people-intr li {
+    float: left;
+    width: 179px;
+    padding: 17px 81px 0 0;
+    /* 兼容ie8 */
+    filter:alpha(opacity=40);
+    opacity:0.4;
+  }
+
+  .people-intr img {
+    width: 179px;
+    height: 151px;
+  }
+
+  .people-intr p {
+    display: none;
+  }
+
+  .-faceus p {
+    display: inline;
+  }
+
+  .people-intr .-faceus {
+    width: 220px;
+    height: 185px;
+    padding-top: 0; 
+    /* 兼容ie8 */
+    filter:alpha(opacity=100);
+    opacity: 1;
+  }
+
+  /* 中间的大图 */
+  .people-intr .faceus {
+    width: 220px;
+    height: 185px;
+  }
+
+  .pjob {
+    font-size: 18.16px;
+    color: #333;
+  }
+
+  .pname {
+    font-size: 18.16px;
+    color: #10a14a;
+  }
+
+  .intrp {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .-arrow {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .-buttonleft {
+    position: absolute;
+    top: -190px;
+    left: -52px;
+  }
+
+  .-buttonright {
+    position: absolute;
+    top: -190px;
+    left: 1135px;
+  }
+
+
+
+  /* 新闻动态 */
+  .news-area {
+    min-width: 1899px;
+    min-height: 272px;
+  }
+
+  .news-areabag {
+    width: 1100px;
+    height: 272px;
+    margin: 64px auto 0 auto;
+  }
+
+  .news-list {
+    width: 1200px;
+    height: 140px;
+  }
+
+  .news-list li {
+    float: left;
+    width: 517px;
+    height: 139px;
+    margin-left: 3%;
+    background: url("../images/news.png") no-repeat;
+  }
+
+  .news-list .bgadd {
+    width: 1px;
+    height: 114px;
+    margin-left: 0;
+    margin-top: 0.5%;
+    background: #d9d9d9;
+  }
+
+  .littleh {
+    display: inline-block;
+    padding-left: 34.62%;
+    line-height: 28px;
+    font-size: 16px;
+    color: #292929;
+  }
+
+  .littlep {
+    display: inline-block;
+    width: 294px;
+    padding-left: 34.62%;
+    line-height: 28px;
+    font-size: 12px;
+    color: #000;
+  }
+
+  .littlem {
+    display: inline-block;
+    padding-left: 34.62%;
+    line-height: 28px;
+    color: #10a14a;
+  }
+
+  .littlem:hover, .littlep:hover, .littleh:hover {
+   text-decoration: underline;
+  }
+
+  
+
+  /* 联系我们 */
+  .tell-us {
+    min-width: 1899px;
+    min-height: 539px;
+  }
+
+  .tell-usbag {
+    width: 1899px;
+    height: 539px;
+    background: url("../images/position.png") no-repeat;
+  }
+
+  .addco {
+    color: #fff;
+  }
+
+  .-design-team {
+    min-width: 1100px;
+    min-height: 539px;
+  }
+
+  .littletool {
+    min-width: 1100px;
+    min-height: 330px;
+  }
+
+  .your-info {
+    float: left;
+    width: 457px;
+    height: 297px;
+    padding-top: 1.82%;
+  }
+
+  .your-info input {
+    width: 453px;
+    height: 36px;
+    line-height: 36px;
+    text-indent: 14px;
+    color: #808080;
+  }
+
+  .bigtext {
+    width: 451px;
+    height: 124px; 
+    text-indent: 14px;
+    color: #808080;
+  }
+
+  .your-info .abutton {
+    position: relative;
+    top: -2px;
+    width: 457px;
+    height: 42px;
+    font-size: 18px;
+    text-align: center;
+    text-indent: 0;
+    border: none;
+    background: #f29400;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .our-info {
+    float: left;
+    padding-top: 1.82%;
+    margin-left: 17%;
+  }
+
+  .our-info li {
+    line-height: 43px;
+    text-indent: 66px;
+    margin-bottom: 1px
+  }
+
+  .ppos {
+    background: url("../images/picsprite.png") no-repeat 0 -172px;
+  }
+
+  .ptel {
+    background: url("../images/picsprite.png") no-repeat 0 -214px;
+  }
+
+  .pfax {
+    background: url("../images/picsprite.png") no-repeat 0 -256px;
+  }
+
+  .pe {
+    background: url("../images/picsprite.png") no-repeat 0 -298px;
+  }
+
+  .pweb {
+    background: url("../images/picsprite.png") no-repeat 0 -340px;
+  }
+
+
+
+  /* footer */
+  .footer {
+    min-width: 1899px;
+    min-height: 111px;
+    background: #333;
+  }
+
+  .station-nav {
+    width: 998px;
+    height: 58px;
+  }
+
+  .station-nav li {
+    float: left;
+    padding-right: 4.81%;
+    height: 58px;
+    line-height: 58px;
+  }
+
+  .station-nav .changeit2 {
+    padding: none;
+  }
+
+  .footer1 {
+    text-align: center;
+    height: 22px;
+    line-height: 22px;
+  }

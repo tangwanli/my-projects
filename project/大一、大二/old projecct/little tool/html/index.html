@@ -1,0 +1,64 @@
+  <!DOCTYPE html>
+  <html lang="zh-cmn-Hans">
+  <head>
+    <!-- 指定字符编码的 meta 必须是 head 的第一个直接子元素 -->
+    <meta charset="utf-8">
+    <!-- SEO优化 -->
+    <title>Style Guide</title>         <!-- title标签放在charset之后 -->
+    <!-- 优先使用最新版本的IE 和 Chrome 内核 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="不超过150个字符">
+    <meta name="keywords" content="">
+    <meta name="author" content="twl, 771147315@qq.com">
+
+    <!-- 为移动设备添加 viewport -->                               
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- 引入样式表 -->
+    <link rel="stylesheet" href="../style/reset.css" type="text/css">
+    <link rel="stylesheet" href="../style/global.css" type="text/css">    <!-- 必须指明type -->
+    <!-- 定义页面所有a标签的打开方式 -->
+    <base target="_blank">
+
+  </head>
+  
+  <body>
+  
+    <!-- 轮播图 -->
+    <div id="carousel-figure">
+        
+        <div class="ul-bag">
+        <ul class="pic-move">
+            
+            <li><a href="#"><img src="../images/skybirds.png" alt="1"></a></li>
+            <li><a href="#"><img src="../images/skyhouse.png" alt="1"></a></li>
+            <li><a href="#"><img src="../images/skyoasis.png" alt="1"></a></li>
+            <li><a href="#"><img src="../images/skytree.png" alt="1"></a></li>
+            
+        </ul>
+        </div>
+        <span class="buttom-left"> < </span>
+        <span class="buttom-right"> > </span>
+        
+    </div>
+
+
+    <!-- cookie保存登陆信息 -->
+    <div id="secend-part">
+
+      <form class="sa-ck" method="post">
+        <label>username</label>
+        <input  class="user-sa" type="text" name="user" placeholder="输入用户名">
+        <label>password</label>
+        <input type="password" name="password">
+        <input class="sub-sa" type="submit" value="登陆">
+        <span class="clear-ck" href="#">清除信息</span>
+      </form>
+    </div>
+
+
+    <script src="../js/js.js"></script>
+  </body>
+  
+  </html>

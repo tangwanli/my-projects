@@ -1,0 +1,23 @@
+/**app.wxss**/
+.container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: auto;
+  font-size: 33rpx;
+} 
+
+input, button {
+  -webkit-tap-hightlight-color: #fff;
+}
+
+page {
+  -webkit-text-size-abjust: 100%;
+  background: linear-gradient(top left, #53d6d5,#39aec6,#84d9d2 75%,#3add5d);
+  background: -moz-linear-gradient(top left, #53d6d5,#39aec6,#84d9d2 75%,#3add5d);
+  background: -webkit-linear-gradient(top left, #53d6d5,#39aec6,#84d9d2 75%,#3add5d);
+}

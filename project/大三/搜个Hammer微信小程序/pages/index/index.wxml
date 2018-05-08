@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<import src="../../utils/template.wxml"/>
+<view class="container">
+  <view class="welcome">
+    <text class='welcome-text'>{{welcome}}</text>
+  </view>
+  <view class="userinfo">
+    <button class="userBtn {{rotate?'shadow':''}}"  open-type="getUserInfo" bindtap='eyesRotate'> LOGIN </button>
+  </view>
+  <template is="pic" data="{{rotate}}"/>
+  <template is="footer"/>
+</view>

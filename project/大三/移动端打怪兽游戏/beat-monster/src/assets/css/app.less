@@ -1,0 +1,98 @@
+@import './reset.css';
+@import './home.css';
+@import './login.css';
+@import './game.css';
+
+@r: 94.93rem;
+
+@-webkit-keyframes snowBg {
+	0% {
+		background-position: 0 0, 0 0;
+	}
+	100% {
+		background-position: 500/@r 500/@r, 1000/@r 500/@r;
+	}
+}
+.font-shadow(@fs) {
+	text-shadow: 2/@r 2/@r 2/@r #ed6868;
+	font-weight: bold;
+	font-size: @fs/@r;
+	color: #845858;
+}
+#app {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	font-family: 'Avenir', Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	background: linear-gradient(top, #969191, #353434 30%, #f8e4e4 60%,#b6acac 80%);
+	color: #2c3e50;
+}
+.snow {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url('../../../static/snow1.png'), url('../../../static/snow2.png');
+    -webkit-animation: 10s snowBg linear infinite;
+    pointer-events: none;
+}
+.msg {
+	padding-top: 3%;
+	transform: rotate(-5deg);
+	margin-bottom: 5%;
+	.font-shadow(50);
+}
+.user {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 7%;
+	right: 7%;
+	width: 150/@r;
+	height: 80/@r;
+	li {
+		height: 40%;
+		p {
+		  .font-shadow(25);
+		}
+		p:hover {
+			color: #e2b091;
+		}
+	}
+}
+.user li:nth-of-type(1) {
+	width: 50%;
+	border-radius: 50% 50%;
+	background: -webkit-radial-gradient(50% 50%, circle, #efebeb, #ae9797 25%, #aa836c 50%, #d7b38d 75%, #6d6575);
+}
+
+
+.box {
+	width: 70%;
+	height: 500/@r;
+	margin: 0 auto;
+}
+.app-enter {
+	transform: translateX(100%);
+}
+.app-enter-to {
+	transform: translateX(0);
+}
+.app-enter-active {
+	transition: 1s ease-out;
+}
+.app-leave {
+	transform: translateX(0);
+}
+.app-leave-to {
+	transform: translateX(-100%);
+}
+.app-leave-active {
+	transition: 1s linear;
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>作业1 进度条ui组件</title>
+</head>
+<style type="text/css">
+/* bar */
+/*@-webkit-keyframes motion {
+	0% {
+		width: 0;
+
+	}
+	100% {
+		width: 100%;
+	}
+}
+	.bacBar {
+		width: 100px;
+		height: 30px;
+		border-radius: 10%/50%;
+		margin: 0 auto;
+		overflow: hidden;
+		background: gray;
+	}
+	.corBar {
+		height: 30px;
+		background: red;
+		animation: 3s motion linear infinite;
+	}*/
+
+/*.out-cir {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	border: 20px solid red;
+	border-radius: 50%;
+}
+.ins-left-cir, .ins-right-cir {
+	position: absolute;
+	top: -20px;
+	width: 70px;
+	height: 140px;
+	background: gray;
+	overflow: hidden;
+}
+.ins-left-cir {
+	left: -20px;
+}
+.ins-right-cir {
+	left: 50px;
+}
+.left, .right {
+	width: 100px;
+	height: 100px;
+	border: 20px solid green;
+	border-radius: 50%;
+}
+.left {
+	border-right: 20px solid transparent;
+/*	border-bottom: 20px solid transparent;*/
+/*}
+.right {
+   transform: translateX(-50px);
+}*/
+.box {
+	position: relative;
+	font-size: 0;
+	width: 300px;
+	height: 250px;
+	margin: 0 auto;
+}
+svg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 60px;
+	height: 40px;
+	transition: 1s;
+}
+svg:nth-of-type(2), svg:nth-of-type(4) {
+	transform-origin: 30px 40px;
+	transform: rotate(180deg);
+}
+polygon {
+	transition: 1s;
+}
+</style>
+<body>
+
+<!-- <div class="bacBar">
+	<div class="corBar"></div>
+</div> -->
+<!-- <div class="out-cir">
+	<div class="ins-left-cir"><div class="left"></div></div>
+	<div class="ins-right-cir"><div class="right"></div></div>
+</div> -->
+<div class="box">
+<svg class="svg1" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <polygon points="0,0 60,0 30,40" style="fill:gray;stroke:purple;stroke-width:1" />
+</svg>
+<svg class="svg2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <polygon points="0,0 60,0 30,40" style="fill:red;stroke:purple;stroke-width:1" />
+</svg>
+<svg class="svg3" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <polygon points="0,0 60,0 30,40" style="fill:red;stroke:purple;stroke-width:1" />
+</svg>
+<svg class="svg4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <polygon points="0,0 60,0 30,40" style="fill:gray;stroke:purple;stroke-width:1" />
+</svg>
+<!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <polygon points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1" />
+</svg> -->
+</div>
+<script>
+    let change = {
+    	num: 0,
+    	default: 1, // default为一秒改动的高度值
+    	init() {
+    		let svg = document.getElementsByTagName('svg');
+    		setInterval(function(that){
+    			if (that.num <=40) {
+    				svg[2].children[0].setAttribute('points',that.setCoord(that.num++));
+    				svg[3].children[0].setAttribute('points',that.setCoord(that.num++));
+    			} else {
+    				that.num = 0;
+    			}
+    		},1000,this);
+    		
+    	},
+    	setCoord(mulNum) { // mulNum为这个时间的倍数，最多为8s
+             let y = this.default * mulNum,
+                 extHeight = 40 - y,
+                 extWidth = (60/40) * extHeight,
+                 x1 = (60-extWidth)/2,
+                 x2 = 60-x1;
+             return x1 + ',' + y + ' ' + x2 + ',' + y + ' 30,40';
+    	} 
+    };
+    change.init();
+</script>
+</body>
+</html>

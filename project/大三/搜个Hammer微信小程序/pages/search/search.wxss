@@ -1,0 +1,74 @@
+@import "../../utils/global.wxss";
+
+.logo-p {
+  top: 205rpx;
+  left: 125rpx;
+}
+.logo, .logo2{
+  position: absolute;
+  box-shadow: 0 0 50rpx #dff294;
+  transform: scale(0.27,0.27);
+}
+.logo:nth-of-type(1) {
+  left: 98rpx;
+}
+.logo2 {
+  left: 196rpx;
+}
+
+.smile canvas{
+  position: relative;
+  top: 60rpx;
+  transform: scale(0.3,0.3);
+}
+
+.userinfo {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx 0;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  position: relative;
+  left: 20rpx;
+  color: #aaa;
+}
+
+.search {
+  display: flex;
+  height: 130rpx;
+  align-items: center;
+}
+.search input {
+  width: 400rpx;
+  height: 70rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 0 50rpx #4561b8;
+  text-indent: 10rpx;
+  background: -webkit-gradient(left,red,blue);
+  color: #4561b8;
+}
+button {
+  width: 80rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 0; 
+  margin-left: 10rpx;
+  box-shadow: 0 0 50rpx #4561b8;
+  font-size: 25rpx;
+  color: gray;
+}
+
+button image {
+  width: 80rpx;
+  height: 70rpx;
+}

@@ -1,0 +1,250 @@
+  <!DOCTYPE html>
+  <html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>圆盘时钟、旋转菜单、折纸</title> 
+    <base target="_blank">
+    <style type="text/css">
+    ul,li {margin:0;padding: 0;}
+    /* 圆盘时钟 */
+    .wrap {width:206px;height:206px; margin:80px auto;position: relative;}
+    .dial {width:200px;height: 200px;border: 2px solid gray;border-radius:50%;font-size:0px;}
+    /* 下面语句中的transform-origin:0 100px;是核心 */
+    .dial span {display: inline-block;width: 2px;height: 6px;background: #666;position: absolute;top: 0;left:100px;-webkit-transform-origin:0 100px;-webkit-transform:rotate(0deg);}
+    .dial span:nth-of-type(5n+1){height: 10px;background: #000;}
+
+    .hand {width: 100px;height: 100px;position: absolute;top:95px;left: 95px;}
+    .hand div {transform-origin:top}
+    .hour {width: 6px;height: 50px;background: black;position: absolute;top: 2.5px;left: 1px;}
+    .min {width: 4px;height: 70px;background: gray;position: absolute;top: 2.5px;left: 2px;}
+    .sec {width: 2px;height: 85px;background: purple;position: absolute;top: 2.5px;left: 2.5px;}
+    .centre {width: 10px;height: 10px;background: gray;border-radius: 50%;position: absolute;top: 0;left: 0;}
+
+    /* 旋转菜单 */
+    /* 这里用了固定定位position: fixed; */
+    .menu {width:50px;height:50px;position: fixed;right:400px;bottom: 200px;border-radius:25px;}
+    .menu-list img {width: 42px;height: 42px;position: absolute;top: 0;left: 0;border-radius:21px;transition: 1s ease-in-out;cursor: pointer;}
+    .home {width:50px;height:50px;background: url(../../images/旋转菜单/home.png) no-repeat;border-radius:25px;position: absolute;top: 0;left: 0;cursor: pointer;transition: 1s ease-in-out;}
+
+    /* 折纸 */
+    .paper-flod {width: 200px;height: 40px;margin: 0 auto;position: fixed;left: 200px;top:80px;}
+    .paper-flod .header {width:100%;line-height: 40px;position: absolute;top: 0;left: 0;text-align:center;font-size: 30px;font-weight: bold;z-index: 1;cursor: pointer;}
+    .option li {transform-style: preserve-3d;perspective: 100px;transform-origin: top;position: absolute;top: 0;left: 0;list-style: none;width:100%;height: 40px;box-shadow:inset 0 0 100px 20px #f60; transition:1s;}
+    </style>
+
+    <script src="../../jquery-1.9.1.js" type="text/javascript"></script>
+
+  </head>
+
+  <body>
+
+  <div class="wrap">
+    <div class="dial">
+<!--       <span></span>
+      <span></span> -->
+    </div>
+    <div class="hand">
+      <div class="hour"></div>
+      <div class="min"></div>
+      <div class="sec"></div>
+      <div class="centre"></div>
+    </div>
+  </div>
+
+  <div class="menu">
+    <div class="menu-list">
+        <img src="../../images/旋转菜单/prev.png">
+        <img src="../../images/旋转菜单/open.png">
+        <img src="../../images/旋转菜单/clos.png">
+        <img src="../../images/旋转菜单/full.png">
+        <img src="../../images/旋转菜单/refresh.png">
+    </div>
+    <div class="home"></div>
+  </div>
+
+  <div class="paper-flod">
+    <div class="header">折纸效果</div>
+    <ul class="option">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <script type="text/javascript">
+     (function() {
+      
+      var makeDial = {
+
+        init : function(el) {
+          var num = 60,
+              spanStr = "",
+              len = 0,
+              i = 0,
+              rotStr = "";
+
+          for ( ; num-- ; ) {
+            spanStr += "<span></span>";
+          }
+          el.append(spanStr);
+
+          var allSpan = el.find("span");
+          len = allSpan.length;
+
+          for ( ; i < len ; i++) {
+            rotStr = "rotate(" + 6*i + "deg)";
+            $(allSpan[i]).css("transform",rotStr);
+          }
+          setInterval(function() {
+            makeDial.getTime();
+          },1000);
+        },
+
+        getTime : function() {
+          var nDate = new Date(),
+              nSec=nDate.getSeconds(),
+              nMin=nDate.getMinutes()+nSec/60,
+              nHour=(nDate.getHours()%12)+nMin/60,
+              i = 0,
+              hand = $(".hand").find("div"),
+              hanStr = "";
+
+            hanStr = "rotate(" + (30*nHour + 180) + "deg)";
+            $(hand[0]).css("transform",hanStr);
+            hanStr = "rotate(" + (6*nMin + 180) + "deg)";
+            $(hand[1]).css("transform",hanStr);
+            hanStr = "rotate(" + (6*nSec + 180) + "deg)";
+            $(hand[2]).css("transform",hanStr);
+        }
+
+      };
+      makeDial.init($(".dial"));
+
+      // 旋转菜单，点击一下，然后其余img旋转出去，再点击一下旋转回来
+      var rotateMenu = {
+        state: "off",
+        distance: 135,
+        // 初始化，传入需要点击的那个home元素
+        init : function(el) {
+          
+          el.click(function() {
+            if(rotateMenu.state === "off") {
+              rotateMenu.state = "on";
+              rotateMenu.rotate($(this),"360deg");
+              rotateMenu.move();
+            } else {
+              rotateMenu.state = "off";
+              rotateMenu.rotate($(this),"-360deg");
+              rotateMenu.move();
+            }
+          });
+          
+        },
+        
+        // 移动，把元素移动出去，或者移动回来
+        move : function() {
+          var allImg = $(".menu-list").find("img"),
+              len = allImg.length,
+              i = 0,
+              left = "",
+              top = "",
+              distance = this.distance,
+              iDeg = 0;
+
+          if (this.state === "on") {
+              this.rotate(allImg,"360deg");
+              for ( ; i<len ; i++) {
+                iDeg = (90/(len-1)*i)/180*Math.PI;
+                left = (-distance * Math.sin(iDeg)) + "px";
+                top = (-distance * Math.cos(iDeg)) + "px";
+                $(allImg[i]).css({"left":left,"top":top});
+            }
+          } else {
+            this.rotate(allImg,"-360deg");
+            for ( ; i<len ; i++) {
+                $(allImg[i]).css({"left":"0px","top":"0px"});
+            }
+          }
+          
+        },
+        
+        // 旋转，元素旋转
+        rotate : function(el, radius) {
+          var str = "rotate(" + radius + ")";
+          el.css("transform",str);
+        }
+      };
+
+      rotateMenu.init($(".home"));
+
+
+      var paperFlod = {
+        el : null,
+        buttonState : "off",
+        shakeTime : 0,
+        shakeState : "normal",
+        timer : null,
+
+        init : function(el) {
+          this.el = el;
+          var header = el.find(".header"),
+              allLi = el.find("li");
+
+              header.click(function() {
+                if (paperFlod.buttonState === "off") {
+                  paperFlod.buttonState = "on";
+                  paperFlod.flod();
+                } else {
+                  paperFlod.buttonState = "off";
+                  paperFlod.flod();
+                }
+                
+              });
+        },
+
+        flod : function() {
+          var el = this.el,
+              allLi = el.find("li"),
+              len = allLi.length,
+              i = 0,
+              top = "";
+              this.shakeTime = 0;
+              
+              if (paperFlod.buttonState === "on") {
+                for ( ; i<len ; i++) {
+                  top = 45*i + "px";
+                  $(allLi[i]).css("top",top);
+                }
+              } else {
+                allLi.css("top","0");
+              }
+              this.timer = setInterval(function(obj, li) {
+                if(obj.shakeTime < 2) {
+                    if (obj.shakeState === "normal") {
+                    obj.shakeState = "in";
+                    obj.shakeTime++;
+                    li.css("transform","rotateX(150deg)");
+                  } else {
+                    obj.shakeState = "normal";
+                    li.css("transform","rotateX(0deg)");
+                  }
+                } else {
+                  clearInterval(obj.timer);
+                }
+                
+              },200,this,allLi);
+              
+
+        }
+      };
+
+      paperFlod.init($(".paper-flod"));
+
+    })();
+    </script>
+       
+  </body>
+  </html>

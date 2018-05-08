@@ -1,0 +1,122 @@
+  /* global.css */
+  body {
+    margin: 0 auto;
+    font-size: 30px;
+    color: red;
+  }
+
+  input {
+    border-radius: 15px;
+    font-size: 30px;
+    background-color: #92eadf;
+    cursor: pointer;
+  }
+
+  #main-block {
+    position: relative;
+    width: 1920px;
+    height: 600px;
+    background-color: #92eadf;
+  }
+
+  .con-score {
+    padding-top: 10px;
+    margin-left: 790px;
+    margin-bottom: 50px;
+  }
+
+  .out-score {
+    width: 200px;
+    text-indent: 30px;
+    outline: none;
+    cursor: default;
+  }
+
+  ul {
+    width: 370px;
+    height: 400px;
+    margin-left: 790px;
+  }
+
+  li {
+    float: left;
+    width: 90px;
+    height: 70px;
+    padding-top: 20px;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  /* 设置按钮 */
+  .con-buttom input {
+    position: absolute;
+    width: 40px;  
+    border-radius: 20px;
+    color: #d254dd;
+  }
+
+  #main-block .buttom-sta {
+    width: 85px;
+    top: 530px;
+    left: 930px;
+    text-indent: 13px;   
+  }
+
+  .buttom-up {
+    top: 55px;
+    left: 950px;
+    text-indent: 13px;
+  }
+
+  .buttom-down {
+    top: 473px;
+    left: 950px;
+    text-indent: 13px;
+  }
+
+  .buttom-left {
+    top: 265px;
+    left: 740px;
+    text-indent: 6px;
+  }
+
+  .buttom-right {
+    top: 265px;
+    left: 1162.5px;
+    text-indent: 6px;
+  }
+
+  /* 侧边栏 */
+  .side-menu {
+    position: absolute;
+    top: 60px;
+    left: -200px;
+    width: 240px;
+    height: 500px;
+    color: #4a7478;
+  }
+
+  .exp-game {
+    float: left;
+    width: 200px;
+    height: 500px;
+    background: #9c8f97;
+    border-radius: 15px;
+  }
+
+  .shoot-menu {
+    float: left;
+    width: 32px;
+    height: 137px;
+    margin-top: 150px;
+    border-radius: 10px;
+    background: #979395;
+    cursor: pointer;
+  }
+
+  .little-change {
+    font-size: 20px;
+    font-weight: bold;
+  }

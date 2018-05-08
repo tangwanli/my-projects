@@ -1,0 +1,206 @@
+  <!DOCTYPE html>
+  <html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="utf-8">
+    <title>商品筛选</title> 
+    <base target="_blank">
+    <style type="text/css">
+    a {text-decoration: none;}
+    ul,li {margin:0;padding: 0;list-style: none;}
+    .wrap {margin-top: 100px;}
+    .goods-filter {margin:0 auto;width: 1000px;height: 350px;border: 1px solid gray;box-shadow: 1px 1px 1px gray,-1px -1px 1px gray;}
+    .choose {line-height: 50px;background: #9be0e3;}
+    .choose span {display:inline-block;text-indent: 20px;}
+    .active-choice {display: inline-block;}
+    .active-choice mark {display:inline-block;text-indent:5px;width:70px;line-height:30px;margin-left:5px;background:#88cdcf;border: 1px solid #5ebec2;}
+    .active-choice a {display: inline-block;width: 20px;line-height: 20px;margin-left:5px;background: #42979a;color: #fff;}
+    .type li {line-height: 50px;margin-left: 20px;border-bottom: 1px dotted gray;}
+    .type span {color: gray;margin-right: 10px;}
+    .type a {color: black;margin-right:10px;}
+    </style>
+
+    <script src="../../jquery-1.9.1.js" type="text/javascript"></script>
+
+  </head>
+
+  <body>
+
+  <div class="wrap">
+    <section class="goods-filter">
+      <nav class="choose">
+        <span>所有分类 ></span>
+        <div class="active-choice"><!-- <mark>魅族<a href="javascript:;">X</a></mark> --></div>
+      </nav>
+      
+      <ul class="type">
+<!--         <li>
+          <span>网络：</span>
+          <a href="javascript:;">联通3G</a>
+          <a href="javascript:;">双卡单4G</a>
+          <a href="javascript:;">双卡双4G</a>
+          <a href="javascript:;">联通4G</a>
+          <a href="javascript:;">电信4G</a>
+          <a href="javascript:;">移动4G</a>
+        </li> -->
+      </ul>
+
+    </section>
+  </div>
+
+  <script type="text/javascript">
+     (function() {
+
+      var goodsFilter = {
+        arrLen : 0,
+        judgeArr : [], // 这个数组用来存放动态生成的所有<mark>
+        isDis : true,
+
+        init : function(dataArr) {
+          this.arrLen = dataArr.length;
+          var ul = $(".type"),
+              arrLen1 = this.arrLen,
+              arrLen2 = arrLen1,
+              arrLen3 = arrLen1,
+              dataLen = 0,
+              dataEl = [],
+              num1 = 0,
+              num2 = 0,
+              aStr = "",
+              judgeArr = this.judgeArr;
+          
+          // 先把所有的li和span添加上去;且初始化judgeArr，初始化它的长度并把所有的项赋值为""
+          for ( ; arrLen1-- ; ) {
+            ul.append("<li><span></span></li>");
+            judgeArr[arrLen1] = ""; 
+          }
+          var li = ul.find("li"),
+              span = li.find("span");
+
+          // 添加span中的文字
+          for ( ; num1<arrLen2 ; num1++ ) {
+            span[num1].innerText = dataArr[num1].title;
+          }
+          num1 = 0;
+
+          // 添加a
+          for ( ; num1<arrLen3 ; num1++ ) {
+            dataEl = dataArr[num1].data;
+            dataLen = dataEl.length;
+            num2 = 0;
+            for ( ; num2<dataLen ; num2++ ) {
+              aStr = "<a href=" + '"javascript:;"' + ">" + dataEl[num2] + "</a>";
+              $(li[num1]).append(aStr);
+            }
+          }
+
+          ul.find("a").click(function() {
+            goodsFilter.pickGoods($(this));
+          });
+
+
+        },
+
+        pickGoods : function(el) {
+          var index= el.parent().index(),
+              markStr = "<mark>" + el.text() + "<a href=" + '"javascript:;"' + ">X</a></mark>",
+              judgeArr = this.judgeArr;
+              this.isDis = true;
+              
+              // 先把mark全部清空，然后再动态生成
+              
+              judgeArr[index] = markStr;
+console.log("add????????",judgeArr);
+              this.changeDis(el,index); // 这个只有el有用
+
+              /*for ( ; num<len ; num++ ) {
+                if (judgeArr[num] !== "") {
+                  activeChoice.append(judgeArr[num]);
+                }
+              }
+
+          el.parent().find("a").css("color","black");
+          el.css("color","red");*/
+        },
+
+        deletePick : function(el) {
+          var markStr = "<mark>" + el.parent().html() + "</mark>",
+              num = 0,
+              judgeArr = this.judgeArr,
+              len = judgeArr.length,
+              index = -1;
+              this.isDis = false;
+              
+              for ( ; len-- ; ) {
+                if(judgeArr[len] == markStr) {
+                  judgeArr[len] = "";
+                  index = len;
+                  console.log("进来没");
+                }
+              } 
+              console.log("delete????????",el.parent().html(),judgeArr,markStr);
+              this.changeDis(el,index); // 这个只有index有用
+              
+        },
+
+        changeDis : function(el, index) {
+          var num = 0,
+              judgeArr = this.judgeArr,
+              len = judgeArr.length,
+              activeChoice = $(".active-choice");
+
+          if (this.isDis) {
+            el.parent().find("a").css("color","black");
+            el.css("color","red");
+          } else {
+            var selector = "li:eq(" + index + ")"; // 这里用了：eq()选择器，由于:eq()不接受变量，所以这里进行了字符串拼接
+            $(".type").find(selector).find("a").css("color","black");
+          }
+          activeChoice.find("mark").remove(); 
+          for ( ; num<len ; num++ ) {
+            if (judgeArr[num] !== "") {
+              activeChoice.append(judgeArr[num]);
+            }
+          }
+
+          $(".active-choice").find("a").click(function() {
+            goodsFilter.deletePick($(this));
+          });
+          console.log($(".active-choice").find("a"),judgeArr);
+        }
+
+      };
+
+    var crumbData = [
+      {
+        "title": "品牌",
+        "data": [ "苹果","小米","锤子","魅族","华为","三星","OPPO","vivo","乐视"]
+      },
+      {
+        "title": "尺寸",
+        "data": ["4.0-4.5英寸","4.6-4.9英寸","5.0-5.5英寸","6.0英寸以上"]
+      },
+      {
+        "title": "系统",
+        "data": ["android","ios","window phone","无","其他"]
+      },
+      {
+        "title": "网络",
+        "data": ["联通3G","双卡单4G","双卡双4G","联通4G"]
+      }
+    ];
+
+      goodsFilter.init(crumbData);
+
+
+
+
+
+
+
+      
+
+    })();
+    </script>
+       
+  </body>
+  </html>
