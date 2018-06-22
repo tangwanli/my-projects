@@ -154,7 +154,6 @@
     // 这个FileList对象中可以包含很多的元素，就是为选中的图片
     // 每一个file元素有5个属性，name：文件名；size：文件大小；type：文件类型。其中两个为文件的的修改时间，
     var fileList = document.getElementById("change").files;
-     console.log(fileList[0]); 
 
     for(var i=0; i<fileList.length; i++) {
       var fileName = fileList[i].name;
@@ -166,6 +165,22 @@
     $(".determine").css("display","block");
 
   }
+/*    function displayPic() {
+    // 这里只能用js原生方法来获取所有的input,不能用jq来获取，具体为什么还不清楚
+    // 这里获取的为FileList对象,结构上类似于数组
+    // 这个FileList对象中可以包含很多的元素，就是为选中的图片
+    // 每一个file元素有5个属性，name：文件名；size：文件大小；type：文件类型。其中两个为文件的的修改时间，
+    var fileList = document.getElementById("change").files;
+    var reader = new FileReader();
+    reader.readAsDataURL(fileList[0]);
+    reader.onload = function(e){ // 要reader.onload之后在执行其他
+       console.log('a reader' + e.target.result); // 这里返回的是data：的这种url
+       var pic = "<img src='" + e.target.result + "'>";
+       $('.emptya').append(pic);
+    }
+    // let path = fileList[0].webkitRelativePath; 这个webkitRelativePath总是为‘’，不知道为何
+
+  }*/
 
 
   function upload() {

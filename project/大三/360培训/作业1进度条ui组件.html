@@ -4,65 +4,8 @@
 	<title>作业1 进度条ui组件</title>
 </head>
 <style type="text/css">
-/* bar */
-/*@-webkit-keyframes motion {
-	0% {
-		width: 0;
 
-	}
-	100% {
-		width: 100%;
-	}
-}
-	.bacBar {
-		width: 100px;
-		height: 30px;
-		border-radius: 10%/50%;
-		margin: 0 auto;
-		overflow: hidden;
-		background: gray;
-	}
-	.corBar {
-		height: 30px;
-		background: red;
-		animation: 3s motion linear infinite;
-	}*/
-
-/*.out-cir {
-	position: relative;
-	width: 100px;
-	height: 100px;
-	border: 20px solid red;
-	border-radius: 50%;
-}
-.ins-left-cir, .ins-right-cir {
-	position: absolute;
-	top: -20px;
-	width: 70px;
-	height: 140px;
-	background: gray;
-	overflow: hidden;
-}
-.ins-left-cir {
-	left: -20px;
-}
-.ins-right-cir {
-	left: 50px;
-}
-.left, .right {
-	width: 100px;
-	height: 100px;
-	border: 20px solid green;
-	border-radius: 50%;
-}
-.left {
-	border-right: 20px solid transparent;
-/*	border-bottom: 20px solid transparent;*/
-/*}
-.right {
-   transform: translateX(-50px);
-}*/
-.box {
+/*.box {
 	position: relative;
 	font-size: 0;
 	width: 300px;
@@ -83,18 +26,49 @@ svg:nth-of-type(2), svg:nth-of-type(4) {
 }
 polygon {
 	transition: 1s;
+}*/
+/* thought 2 */
+.box {
+	position: relative;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background: red;
+	overflow: hidden;
+}
+.circle {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	z-index: 2;
+	width: 80%;
+	height: 80%;
+	border-radius: 50%;
+	background: #fff;
+}
+/* 遮盖实现：先让shadow1宽度从0慢慢增加到50，实现遮住1/4个圆,再增加它的高度；到了100%之后，把shadow2的top往上面涨，直到top等于0 */
+.shadow1, .shadow2 {
+	position: absolute;
+	z-index: 1;
+	background: green;
+	transition: 1s;
+}
+.shadow1 {
+	left: 40px;
+	width: 50%;
+	height: 50%;
+}
+.shadow2 {
+	left: 0;
+	top: 100%;
+	width: 50%;
+	height: 100%;
 }
 </style>
 <body>
 
-<!-- <div class="bacBar">
-	<div class="corBar"></div>
-</div> -->
-<!-- <div class="out-cir">
-	<div class="ins-left-cir"><div class="left"></div></div>
-	<div class="ins-right-cir"><div class="right"></div></div>
-</div> -->
-<div class="box">
+
+<!-- <div class="box">
 <svg class="svg1" xmlns="http://www.w3.org/2000/svg" version="1.1">
   <polygon points="0,0 60,0 30,40" style="fill:gray;stroke:purple;stroke-width:1" />
 </svg>
@@ -107,12 +81,14 @@ polygon {
 <svg class="svg4" xmlns="http://www.w3.org/2000/svg" version="1.1">
   <polygon points="0,0 60,0 30,40" style="fill:gray;stroke:purple;stroke-width:1" />
 </svg>
-<!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <polygon points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1" />
-</svg> -->
+</div> -->
+<div class="box">
+	<div class="circle"></div>
+	<div class="shadow1"></div>
+	<div class="shadow2"></div>
 </div>
 <script>
-    let change = {
+/*    let change = {
     	num: 0,
     	default: 1, // default为一秒改动的高度值
     	init() {
@@ -136,7 +112,7 @@ polygon {
              return x1 + ',' + y + ' ' + x2 + ',' + y + ' 30,40';
     	} 
     };
-    change.init();
+    change.init();*/
 </script>
 </body>
 </html>
