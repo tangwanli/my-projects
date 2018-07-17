@@ -15,44 +15,31 @@ html,body {
   position: relative;
 }
 #warning {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200px;
-  height: 200px;
-  background: black;
+  width: 1000px;
+  height: 400px;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+}
+#warning .content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 #warning div {
-  float: left;
-}
-.demo1 {
-  width: 50%;
-  height: 50%;
-  background: red;
-}
-#warning div:nth-of-type(odd) {
-  background: blue;
-}
-#warning div:nth-of-type(even) {
-  background: red;
-}
-p {
-  border: 1px solid red;
-  color: yellow;
-}
-a, img {
-  display: block;
-  background: red;
-}
-img {
-  width: 100px;
+  width: 200px;
   height: 100px;
+  border: 1px solid green;
 }
-input {
-  width: 500px;
-  height: 500px;
-  float: right;
-
+body #warning .demo2 {
+  width: 300px;
+  height: 50px;
+}
+canvas {
+  width: 600px;
+  height: 300px;
+  border: 1px solid red;
 }
     </style>
   </head>
@@ -60,34 +47,40 @@ input {
   <body>
 
 <div id="warning">
-    <div class="demo1">1</div>
-    <div class="demo2">2</div>
-    <div class="demo3">3</div>
+    <div class="content">
+      <div class="demo1">1</div>
+      <div class="demo2">2</div>
+      <div class="demo3">3</div>
+    </div>
    <!--  <input class='apattern' type="pattern" value='??????'> -->
 </div>
-   <input type="file" multiple>
 
-    
 
+    <a href="market://search?q=map">这里是我的链接</a>
+<hr>
+<dl>
+<dt>123</dt>
+<dd>12</dd>
+<dt>12345</dt>
+<dd>12</dd>
+</dl>
+<cite>12</cite>
+<canvas></canvas>
+<img src="#">
+<svg></svg>
     <script src="jquery-3.1.1.js"></script>
 <!--     <script src="bootstrap-3.3.5/dist/js/bootstrap.min.js"></script>
     <script src="vue.js"></script> -->
     <!-- <script src="try.js"></script> -->
     <script>
     
+var str = "hello world,hello world";
+            var canvas = $('canvas').get(0),
+                ctx = canvas.getContext('2d');
+            ctx.moveTo(0,0);
+            ctx.lineTo(300,150);
+            ctx.stroke();
 
-    let inp = $('input');
-    inp.change(function(ev) {
-      let fileList = inp[0].files;
-      console.log('????' + fileList[0] + ' name: ' + fileList[0].name + ' size: ' + fileList[0].size + ' type: ' + fileList[0].type + ' path: ' + fileList.webkitRelativePath + ' modified: ' + fileList.lastModified);
-      let reader = new FileReader();
-      reader.readAsBinaryString(fileList[0]);
-      reader.onload = function(ev) {
-        console.log(this,'ev',ev.target.result);
-        console.log('state ' + reader.readyState + ' result ' + reader.result);
-      }
-            
-    });
 
     
     </script>
