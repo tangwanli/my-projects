@@ -1,0 +1,63 @@
+/* login.css */
+
+  body {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    color: blue;
+  }
+  
+  #content {
+    width: 1000px;
+    height: 200px;
+    border: 1px dotted red;
+    margin: 0 auto;
+    margin-top: 200px;
+  }
+  
+  #login-form {
+    width: 280px;
+    height: 200px;
+    border: 1px dotted red;
+    margin: 0 auto;
+    text-align: right;
+  }
+  
+  input {
+    width: 200px;
+    height: 25px;
+    margin-top: 20px;
+  }
+  
+  #submit {
+    display: block;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    color: blue;
+  }
+  
+  a {
+    display: block;
+    width: 100px;
+    border: 1px solid yellow;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    text-decoration: none;
+    line-height: 25px;
+    background: red;
+    cusor: pointer;
+  }
+  
+  a:hover {
+    border-color: green;
+    background: pink;
+  }
+  
+  #extra {
+    font-size: 12px;
+    margin: 1px 25px 0 0;
+    color: gray;
+  }

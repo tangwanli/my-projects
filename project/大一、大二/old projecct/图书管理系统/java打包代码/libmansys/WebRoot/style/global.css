@@ -1,0 +1,391 @@
+/* global.css */
+
+
+  /* 设置字体颜色为这个固定值 */
+  .font-color {
+    font-weight: bold;
+    color: #848587;
+  }
+
+  .page {
+    min-width: 1280px;
+  }
+  
+
+
+  /* header */
+  .header {
+    width: 100%;
+    border-radius: 10px;
+    background: url(../images/header_bg.png) repeat-x;
+  }
+
+  .nav {
+    width: 75%;
+    height: 80px;
+    margin: 0 auto;
+  }
+
+  /* nav-left */
+  .nav-left {
+    float: left;
+    width: 20%;
+    line-height: 80px;
+  }
+
+  .logo {
+    float: left;
+    width: 51px;
+  }
+
+  .logo img {
+    vertical-align: middle;
+    border-radius: 5px;
+  }
+
+  h1 {
+    float: right;
+    font-size: 150%;
+    text-shadow: 2px 2px gray;
+  }
+
+
+  /* nav-right */
+  .nav-right {
+    float: right;
+    width: 50%;
+  }
+
+  .page-info {
+    float: right;
+    margin-top: 50px;
+  }
+
+  .page-info li {
+    float: left;
+    height: 14px;
+    padding-right: 20px;
+  }
+
+  .time {
+    text-shadow: 2px 2px gray;
+  }
+
+  .line {
+    padding-left: 20px;
+    font-weight: bold;
+    color: gray;
+  }
+
+  .signout {
+    padding-left: 20px;
+    background: url(../images/signout.png) no-repeat left 50%;
+    text-shadow: 2px 2px gray;
+  }
+
+  .user-box {
+    width: 100%;
+    border-bottom: 1px solid #d9dadc;
+    border-radius: 10px;
+    background: #edf2f6;
+  }
+
+  .user {
+    width: 75%;
+    line-height: 32px;
+    margin: 0 auto;
+  }
+
+  .headershadow {
+    height: 2px;
+    background: #fff;
+  }
+
+
+
+  /* content */
+  .content {
+    width: 100%;
+    border-radius: 10px;
+    background: #e8e4e4;
+  }
+
+  .content-box {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+
+  /* left-nav */
+  .left-nav {
+    float: left;
+    width: 20%;
+    height: 1000px;
+    border-radius: 10px;
+    background: #2966a5;
+  }
+
+  .left-nav li {
+    padding-bottom: 5px;
+    border-radius: 10px;
+    font-size: 150%;
+    text-shadow: 2px 2px gray;
+  }
+
+  .lib-man, .user-info {
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* 设置列表头的样式 */
+  .listheader {
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 180%;
+    font-weight: normal;
+    box-shadow: 0px 1px #21609f;
+    text-shadow: 3px 2px gray;
+    background: #4690d1;
+    color: #e9fafb;
+  }
+
+  .left-nav li:hover, .listheader:hover {
+    color: #dedc2c;
+    cursor: pointer;
+  }
+
+  .lib-man {
+    margin-bottom: 10px;
+  }
+
+  /* border小三角样式 */
+  .triangle {
+    width: 0;
+    height: 0;    
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid #c3c7a7;
+    border-right: 7px solid transparent;
+    font-size: 0;
+    vertical-align: middle;
+  }
+
+
+
+  /* 右边的内容 */
+  .right-content {
+    float: right;
+    width: 80%;
+    background: #f9fbec;
+  }
+
+  .space {
+    padding-top: 2px;
+    color: #fff;
+  }
+
+  .right-box {
+    margin-left: 5%;
+    height: 1000px;
+  }
+
+  
+  /* 所在位置 */
+  .location-box {
+    margin-left: -5%;
+    line-height: 250%;
+    box-shadow: 0 2px #e8ecce,
+                0 -2px #e8ecce;
+    border-radius: 10px;
+  }
+
+  .content-location {
+    position: relative;
+    margin-left: 5%;
+  }
+
+  .bluetriangle {
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid #6acce8;
+    margin-right: 6px;
+    font-size: 0;
+    vertical-align: middle;
+  }
+
+  .content-location:after {
+    content: "\00bb";
+    margin: 0 1%;
+    font-size: 200%;
+    vertical-align: top;
+    color: #54ccef;
+  }
+
+  .add-tag {
+    position: absolute;
+    left: 8%;
+    font-size: 18px;
+    color: #ebb43d;
+  }
+
+
+  /* 具体的操作部分 */
+  .operate-part {
+    height: 80%;
+    padding-top: 5%;
+  }
+
+  .operate {
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .operate li {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #848587;
+  }
+
+  /* 欢迎页面 */
+  .welcome {
+    letter-spacing: 10px;
+    word-spacing: 5px;
+  }
+
+  .welcome span {
+    margin-top: 20px;
+    font-size: 200%;
+    letter-spacing: 10px;
+    word-spacing: 5px;
+    color: pink;
+  }
+
+  /* li的具体样式 */
+  .operatetitle {
+    font-size: 400%;
+    padding: 5%;
+    padding-top: 0;
+    margin-bottom: 25px;
+    box-shadow: 0 0 10px 1px red;
+    color: #ebb43d;
+  }
+
+  .main-form {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .main-form label {
+    padding-right: 10px;
+    font-size: 200%;
+    color: #f34f1d;
+  }
+
+  .main-form input {
+    width: 30%;
+    height: 30px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-indent: 5px;
+    color: #f2bf52;
+  }
+
+  .main-form input[type="button"] {
+    width: 15%;
+    margin-top: 1.5%;
+    margin-left: 15%;
+    background: #398fc6;
+    cursor: pointer;
+  }
+
+  .operate li p {
+    margin: 20px;
+    font-size: 200%;
+    color: #f765f5;
+  }
+
+  /* 改变placeholder颜色 */
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #f9dc3e;
+  }
+　:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #f9dc3e;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color: #f9dc3e;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+     color: #f9dc3e;
+  }
+
+  
+
+
+  /* 增加页面 */
+  .b-add, .b-delete, .b-query, .b-alter, .p-borrow {
+    display: none;
+  }
+
+  /* 上传控件 */
+
+  label[for] {
+    display:block;
+    width: 150px;
+    border: 2px solid #a79cb0;
+    border-top: 2px solid #a79cb0;
+    border-bottom: 2px solid #a79cb0;
+    border-radius: 10px;
+    margin-top: 8%;
+    margin-bottom: 10%;
+    box-shadow: 1px 1px 10px 10px #a79cb0 inset;
+    cursor: pointer;
+    color: #3767be;
+  }
+
+  #change {
+    position:absolute;
+    clip:rect(0 0 0 0);
+  }
+
+  .pic-location {
+    background: #fff;
+  }
+
+  .pic-location img {
+    width: 100px;
+    height: 100px;
+    border: 1px dotted gray;
+    margin-right: 5px;
+  }
+
+  .determine {
+    display: none;
+    cursor: pointer;
+  }
+
+
+  /* 查找页面返回消息样式 */
+
+  .b-query .return p, .p-info .elsereturn p{
+    padding: 0;
+    border: 1px dotted #964cd0;
+    border-radius: 15px;
+    margin: 0;
+    font-size:100%;
+    text-align: left;
+    background:#e6ddec;
+  }
+
+  .elsereturn span, .return span {
+    padding: 0 1%;
+    border-right: 1px dotted gray;
+    font-size: 100%;
+    color: #f34f1d;
+  }

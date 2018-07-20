@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+    <welcome-file-list> <!-- 设置欢迎页面,即首页 -->
+  <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  
+  
+  <!-- 登录页面的Servlet -->
+  <servlet> <!-- 用来声明一个servlet的数据 -->
+    <description>登录页面的Servlet </description> <!-- 给出这个相关的说明性文本 --> 
+    <display-name>LoginServlet</display-name>  <!-- 提供GUI工具可能会用来标记这个特定的Web应用的一个名称  -->
+    <servlet-name>LoginServlet</servlet-name> <!-- 指定servlet的名称 -->
+    <servlet-class>control.LoginServlet</servlet-class> <!-- servlet的完整包名加类名 -->
+  </servlet>
+  <servlet-mapping> <!-- 用来定义servlet所对应的URL，包含两个子元素  -->
+    <servlet-name>LoginServlet</servlet-name> <!-- 根据这个标签的名字服务器会找到被映射的同名servlet的字节码文件  -->
+    <url-pattern>/LoginServlet</url-pattern> <!-- 它的值要与浏览器输入的地址相匹配，通过url-pattern可以查找到servlet-name,在通过serlvet-name可以查找到对应servlet类.  -->
+  </servlet-mapping>
+  
+  
+  
+  <!-- 注册页面的Servlet -->
+    <servlet> 
+    <description>注册页面的Servlet </description> 
+    <display-name>RegisterServlet</display-name>  
+    <servlet-name>RegisterServlet</servlet-name> 
+    <servlet-class>control.RegisterServlet</servlet-class> 
+  </servlet>
+  <servlet-mapping> 
+    <servlet-name>RegisterServlet</servlet-name> 
+    <url-pattern>/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <!-- 判断是否登录的Servlet -->
+    <servlet> 
+    <description>判断是否登录的Servlet </description> 
+    <display-name>ValidateServlet</display-name>  
+    <servlet-name>ValidateServlet</servlet-name> 
+    <servlet-class>control.ValidateServlet</servlet-class> 
+  </servlet>
+  <servlet-mapping> 
+    <servlet-name>ValidateServlet</servlet-name> 
+    <url-pattern>/ValidateServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <!-- 判断是否登录的Servlet -->
+    <servlet> 
+    <description>判断是否登录的Servlet </description> 
+    <display-name>OperateServlet</display-name>  
+    <servlet-name>OperateServlet</servlet-name> 
+    <servlet-class>control.OperateServlet</servlet-class> 
+  </servlet>
+  <servlet-mapping> 
+    <servlet-name>OperateServlet</servlet-name> 
+    <url-pattern>/OperateServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+</web-app>

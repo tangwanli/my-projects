@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="libmansys"
+  id="myeclipse.1496302041678"
+  context-root="/libmansys"
+  j2ee-spec="5.0"
+  archive="libmansys.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

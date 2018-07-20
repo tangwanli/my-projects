@@ -41,11 +41,29 @@ canvas {
   height: 300px;
   border: 1px solid red;
 }
+input::-webkit-input-placeholder {
+  color: red;
+  font-size: 30px;
+}
+.block {
+  position: absolute;
+  top: 50px;
+  width: 300px;
+  height: 300px;
+border: 10px solid green;
+}
+.inc {
+width: 100px;
+height: 100px;
+position: absolute;
+left: 0;
+background: -webkit-linear-gradient(90deg, red 25%, yellow 50%, blue 75%);
+}
     </style>
   </head>
   
   <body>
-
+  <div class='block'><div class="inc"></div></div>
 <div id="warning">
     <div class="content">
       <div class="demo1">1</div>
@@ -54,7 +72,7 @@ canvas {
     </div>
    <!--  <input class='apattern' type="pattern" value='??????'> -->
 </div>
-
+<input type="text" placeholder="???????????">
 
     <a href="market://search?q=map">这里是我的链接</a>
 <hr>
@@ -68,6 +86,12 @@ canvas {
 <canvas></canvas>
 <img src="#">
 <svg></svg>
+<img src="./images/boy.jpg" usemap="#planetmap" alt="..">
+<map id="planetmap" name="planetmap">
+     <area shape="rect" href="demo.html" coords="0,0,50,50">
+     <area shape="circle" href="demo2.html" coords="120,80,50">
+     <area shape="poly" href="c.html" coords="0,0,50,50,100,100,200,200">
+</map>
     <script src="jquery-3.1.1.js"></script>
 <!--     <script src="bootstrap-3.3.5/dist/js/bootstrap.min.js"></script>
     <script src="vue.js"></script> -->
