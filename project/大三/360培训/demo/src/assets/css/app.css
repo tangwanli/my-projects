@@ -1,0 +1,20 @@
+
+@import 'home.css';
+@import 'motion1.css';
+
+html, body {
+	margin: 0;
+}
+#app {
+	position: relative;
+	width: 100%;
+	height: 1000px;
+	border: 1px solid red;
+}
+.box {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url(../../../static/bac1.png) no-repeat;
+	background-size: 100%;
+}

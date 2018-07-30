@@ -91,8 +91,8 @@ context.moveTo(70, 140); // 表示绘图游标移动到目标位置，不画线�
 context.lineTo(140, 70); // 表示将游标从当前点移动到目标点，在两点之间画一条直线。
 
 context.stroke(); // 描边，把路径画到canvas上
-    
-
+    function a(){}
+   console.log([] == ![]);
   })();
 
 

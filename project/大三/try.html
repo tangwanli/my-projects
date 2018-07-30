@@ -14,99 +14,37 @@ html,body {
   height: 100%;
   position: relative;
 }
-#warning {
-  width: 1000px;
-  height: 400px;
-  border: 1px solid red;
-  display: flex;
-  align-items: center;
+p~h1 {
+   background: red;
 }
-#warning .content {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-#warning div {
-  width: 200px;
-  height: 100px;
-  border: 1px solid green;
-}
-body #warning .demo2 {
-  width: 300px;
-  height: 50px;
-}
-canvas {
-  width: 600px;
-  height: 300px;
-  border: 1px solid red;
-}
-input::-webkit-input-placeholder {
-  color: red;
-  font-size: 30px;
-}
-.block {
-  position: absolute;
-  top: 50px;
-  width: 300px;
-  height: 300px;
-border: 10px solid green;
-}
-.inc {
-width: 100px;
-height: 100px;
-position: absolute;
-left: 0;
-background: -webkit-linear-gradient(90deg, red 25%, yellow 50%, blue 75%);
+.i {
+  float: left;
+  height: 20px;
+  cursor: pointer;
+  font-size: 10px;
+  background: green;
 }
     </style>
   </head>
   
   <body>
-  <div class='block'><div class="inc"></div></div>
-<div id="warning">
-    <div class="content">
-      <div class="demo1">1</div>
-      <div class="demo2">2</div>
-      <div class="demo3">3</div>
-    </div>
-   <!--  <input class='apattern' type="pattern" value='??????'> -->
-</div>
-<input type="text" placeholder="???????????">
+  <main>
+    <p class='i' style='background: red;'>1</p>
+    <div>2<span>12</span></div>
+    <div>3</div>
+    <h1>sda</h1>
+  </main>
+</body>
 
-    <a href="market://search?q=map">这里是我的链接</a>
-<hr>
-<dl>
-<dt>123</dt>
-<dd>12</dd>
-<dt>12345</dt>
-<dd>12</dd>
-</dl>
-<cite>12</cite>
-<canvas></canvas>
-<img src="#">
-<svg></svg>
-<img src="./images/boy.jpg" usemap="#planetmap" alt="..">
-<map id="planetmap" name="planetmap">
-     <area shape="rect" href="demo.html" coords="0,0,50,50">
-     <area shape="circle" href="demo2.html" coords="120,80,50">
-     <area shape="poly" href="c.html" coords="0,0,50,50,100,100,200,200">
-</map>
     <script src="jquery-3.1.1.js"></script>
 <!--     <script src="bootstrap-3.3.5/dist/js/bootstrap.min.js"></script>
     <script src="vue.js"></script> -->
-    <!-- <script src="try.js"></script> -->
+    <script src="try.js"></script>
     <script>
     
-var str = "hello world,hello world";
-            var canvas = $('canvas').get(0),
-                ctx = canvas.getContext('2d');
-            ctx.moveTo(0,0);
-            ctx.lineTo(300,150);
-            ctx.stroke();
 
-
-    
+let a = $('main').find('div').remove();
+    console.log(a);
     </script>
 
 

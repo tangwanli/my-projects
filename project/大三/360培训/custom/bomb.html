@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bomb</title>
+	<link rel="stylesheet" type="text/css" href="./man.css">
+</head>
+<body>
+   <div class="box2">
+			<div class="wrapper"><!-- 容器 -->
+	    <div class="littleH"><!-- 小黄人 -->
+	        <div class="top-canvas"><canvas></canvas></div>
+	        <div class="bodyH"><!-- 身体 -->
+	        </div>
+	        <div class="hair"><!-- 头发 -->
+	            <div class="left_hair_one"><div></div></div>
+	            <div class="left_hair_two"><div></div></div>
+	        </div>
+	        <div class="eyes"><!-- 眼睛 -->
+	            <div class="leftEye"><!-- 左眼 -->
+	                <div class="left_blackEye">
+	                    <div class="left_white"></div>
+	                </div>
+	            </div>
+	            <div class="rightEye"><!-- 右眼 -->
+	                <div class="right_blackEye">
+	                    <div class="right_white"></div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="mouse"><!-- 嘴巴 -->
+	            <div class="mouse_shape"></div>
+	        </div>
+	        <div class="hands"><!-- 双手 -->
+	            <div class="leftHand"><div></div></div>
+	            <div class="rightHand"><div></div></div>
+	        </div>
+	        <div class="feet"><!-- 双脚 -->
+	            <div class="left_foot"></div>
+	            <div class="right_foot"></div>
+	        </div>
+	        <div class="groundShadow"></div><!-- 脚底阴影 -->
+	    </div>
+	</div>
+   </div>
+   <script type="text/javascript" src='./effect.js'></script>
+   <script>
+effect.init(document.querySelector('canvas'));
+</script>
+</body>
+</html>
