@@ -10,41 +10,65 @@
     <style type="text/css">
 /* 填写初始CSS代码 */
 html,body {
-  width: 100%;
+
   height: 100%;
   position: relative;
 }
-p~h1 {
-   background: red;
+
+.a {
+	float: left;
+	width: 200px;
+	height: 200px;
+	background: red;
 }
-.i {
-  float: left;
-  height: 20px;
-  cursor: pointer;
-  font-size: 10px;
-  background: green;
+.b {
+	width: calc(100% - 200px);
+	height: 200px;
+	margin-left: 200px;
+	background: green;
+
+}
+.mytext {
+	transform: rotate(30deg);
+}
+
+div {
+	background: #0000;
 }
     </style>
   </head>
   
   <body>
-  <main>
-    <p class='i' style='background: blue;'>1</p>
-    <div>2<span>12</span></div>
-    <div>3</div>
-    <h1>sda</h1>
-  </main>
+
+<div class="wrap">
+<!-- <svg width="100%" height="480" xmlns="http://www.w3.org/2000/svg" fill="red" stroke="green" stroke-width="5" stroke-opacity="0.5" font-size="30" font-weight="lighter" word-spacing="10" text-anchor="baseline">
+    <g transform-origin="left top" transform="translate(10)" fill="green" stroke="blue" stroke-width="5" stroke-opacity="1">
+<rect x="10" y="10" width="20" height="20" style="stroke: black; fill: #cfc;">
+    <animate attributeName="width" attributeType="XML" begin="2" dur="2" from="20" to="120" fill="freeze" repeatCount="indefinite"></animate>
+    <animate attributeName="height" attributeType="XML" begin="0" dur="2" end="3" from="20" by="100" fill="freeze"></animate>
+</rect>
+	</g>
+</svg>  -->
+<div style='width:400px;height:200px;'>
+  <span style='float:left;width:auto;height:100%;'>
+  </span>
+</div>
+</div>
 </body>
 
     <script src="jquery-3.1.1.js"></script>
 <!--     <script src="bootstrap-3.3.5/dist/js/bootstrap.min.js"></script>
     <script src="vue.js"></script> -->
-    <script src="try.js"></script>
+  <!--   <script src="try.js"></script> -->
+
     <script>
     
+var obj = {"key":"1","value":"2"};
+var newObj = obj;
+newObj.value += obj.key + 3;
+alert(obj.value);
 
-let a = $('main').find('div').remove();
-    console.log(a);
+
     </script>
 
 

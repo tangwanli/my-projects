@@ -1,0 +1,124 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\node.js\\node.exe',
+1 verbose cli   'D:\\node.js\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'i',
+1 verbose cli   '-D',
+1 verbose cli   'less-loader',
+1 verbose cli   'less' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.1
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData less-loader
+8 silly fetchPackageMetaData less
+9 silly fetchNamedPackageData less-loader
+10 silly mapToRegistry name less-loader
+11 silly mapToRegistry using default registry
+12 silly mapToRegistry registry https://registry.npmjs.org/
+13 silly mapToRegistry data Result {
+13 silly mapToRegistry   raw: 'less-loader',
+13 silly mapToRegistry   scope: null,
+13 silly mapToRegistry   escapedName: 'less-loader',
+13 silly mapToRegistry   name: 'less-loader',
+13 silly mapToRegistry   rawSpec: '',
+13 silly mapToRegistry   spec: 'latest',
+13 silly mapToRegistry   type: 'tag' }
+14 silly mapToRegistry uri https://registry.npmjs.org/less-loader
+15 silly fetchNamedPackageData less
+16 silly mapToRegistry name less
+17 silly mapToRegistry using default registry
+18 silly mapToRegistry registry https://registry.npmjs.org/
+19 silly mapToRegistry data Result {
+19 silly mapToRegistry   raw: 'less',
+19 silly mapToRegistry   scope: null,
+19 silly mapToRegistry   escapedName: 'less',
+19 silly mapToRegistry   name: 'less',
+19 silly mapToRegistry   rawSpec: '',
+19 silly mapToRegistry   spec: 'latest',
+19 silly mapToRegistry   type: 'tag' }
+20 silly mapToRegistry uri https://registry.npmjs.org/less
+21 verbose request uri https://registry.npmjs.org/less-loader
+22 verbose request no auth needed
+23 info attempt registry request try #1 at 20:12:15
+24 verbose request id 24c5f3d98b4e986b
+25 http request GET https://registry.npmjs.org/less-loader
+26 verbose request uri https://registry.npmjs.org/less
+27 verbose request no auth needed
+28 info attempt registry request try #1 at 20:12:15
+29 http request GET https://registry.npmjs.org/less
+30 http 200 https://registry.npmjs.org/less-loader
+31 verbose headers { date: 'Mon, 13 Aug 2018 12:12:13 GMT',
+31 verbose headers   'content-type': 'application/json; charset=UTF-8',
+31 verbose headers   'transfer-encoding': 'chunked',
+31 verbose headers   connection: 'keep-alive',
+31 verbose headers   'set-cookie': [ '__cfduid=dbafad556ee701ce8ee4ff614cd61cd7f1534162333; expires=Tue, 13-Aug-19 12:12:13 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+31 verbose headers   'cache-control': 'max-age=300',
+31 verbose headers   'cf-cache-status': 'HIT',
+31 verbose headers   'cf-ray': '449b16ba1892b212-HKG',
+31 verbose headers   etag: 'W/"7ad7edfd631571d5d1d21ac025e2929d"',
+31 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+31 verbose headers   'last-modified': 'Fri, 03 Aug 2018 00:35:37 GMT',
+31 verbose headers   vary: 'accept-encoding, accept',
+31 verbose headers   server: 'cloudflare',
+31 verbose headers   'content-encoding': 'gzip' }
+32 silly get cb [ 200,
+32 silly get   { date: 'Mon, 13 Aug 2018 12:12:13 GMT',
+32 silly get     'content-type': 'application/json; charset=UTF-8',
+32 silly get     'transfer-encoding': 'chunked',
+32 silly get     connection: 'keep-alive',
+32 silly get     'set-cookie': [ '__cfduid=dbafad556ee701ce8ee4ff614cd61cd7f1534162333; expires=Tue, 13-Aug-19 12:12:13 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+32 silly get     'cache-control': 'max-age=300',
+32 silly get     'cf-cache-status': 'HIT',
+32 silly get     'cf-ray': '449b16ba1892b212-HKG',
+32 silly get     etag: 'W/"7ad7edfd631571d5d1d21ac025e2929d"',
+32 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+32 silly get     'last-modified': 'Fri, 03 Aug 2018 00:35:37 GMT',
+32 silly get     vary: 'accept-encoding, accept',
+32 silly get     server: 'cloudflare',
+32 silly get     'content-encoding': 'gzip' } ]
+33 verbose get saving less-loader to C:\Users\MSI\AppData\Roaming\npm-cache\registry.npmjs.org\less-loader\.cache.json
+34 verbose correctMkdir C:\Users\MSI\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+35 info retry will retry, error on last attempt: Error: read ECONNRESET
+36 info attempt registry request try #2 at 20:12:47
+37 http request GET https://registry.npmjs.org/less
+38 info retry will retry, error on last attempt: Error: connect ETIMEDOUT 104.16.19.35:443
+39 info attempt registry request try #3 at 20:14:08
+40 http request GET https://registry.npmjs.org/less
+41 silly fetchPackageMetaData Error: connect ETIMEDOUT 104.16.19.35:443
+41 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1026:11)
+41 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1049:20)
+41 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1085:14)
+41 silly fetchPackageMetaData  error for less { Error: connect ETIMEDOUT 104.16.19.35:443
+41 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1026:11)
+41 silly fetchPackageMetaData     at exports._exceptionWithHostPort (util.js:1049:20)
+41 silly fetchPackageMetaData     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1085:14)
+41 silly fetchPackageMetaData   code: 'ETIMEDOUT',
+41 silly fetchPackageMetaData   errno: 'ETIMEDOUT',
+41 silly fetchPackageMetaData   syscall: 'connect',
+41 silly fetchPackageMetaData   address: '104.16.19.35',
+41 silly fetchPackageMetaData   port: 443 }
+42 silly rollbackFailedOptional Starting
+43 silly rollbackFailedOptional Finishing
+44 silly runTopLevelLifecycles Finishing
+45 silly install printInstalled
+46 verbose stack Error: connect ETIMEDOUT 104.16.19.35:443
+46 verbose stack     at Object.exports._errnoException (util.js:1026:11)
+46 verbose stack     at exports._exceptionWithHostPort (util.js:1049:20)
+46 verbose stack     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1085:14)
+47 verbose cwd F:\github repository\my-projects\project\大三\webpackdemo
+48 error Windows_NT 10.0.16299
+49 error argv "D:\\node.js\\node.exe" "D:\\node.js\\node_modules\\npm\\bin\\npm-cli.js" "i" "-D" "less-loader" "less"
+50 error node v6.9.1
+51 error npm  v3.10.8
+52 error code ETIMEDOUT
+53 error errno ETIMEDOUT
+54 error syscall connect
+55 error network connect ETIMEDOUT 104.16.19.35:443
+56 error network This is most likely not a problem with npm itself
+56 error network and is related to network connectivity.
+56 error network In most cases you are behind a proxy or have bad network settings.
+56 error network
+56 error network If you are behind a proxy, please make sure that the
+56 error network 'proxy' config is set properly.  See: 'npm help config'
+57 verbose exit [ 1, true ]
