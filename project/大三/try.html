@@ -15,45 +15,17 @@ html,body {
   position: relative;
 }
 
-.a {
-	float: left;
-	width: 200px;
-	height: 200px;
-	background: red;
-}
-.b {
-	width: calc(100% - 200px);
-	height: 200px;
-	margin-left: 200px;
-	background: green;
-
-}
-.mytext {
-	transform: rotate(30deg);
-}
-
-div {
-	background: #0000;
-}
     </style>
   </head>
   
   <body>
+  
+  <form id="myForm" action="" method="post">
+    <input type="text" name="name" value='shenme'>名字
+    <input type="password" name="psw" value='password'>密码
+    <input type="submit" name='sublime' value="提交">
+</form>
 
-<div class="wrap">
-<!-- <svg width="100%" height="480" xmlns="http://www.w3.org/2000/svg" fill="red" stroke="green" stroke-width="5" stroke-opacity="0.5" font-size="30" font-weight="lighter" word-spacing="10" text-anchor="baseline">
-    <g transform-origin="left top" transform="translate(10)" fill="green" stroke="blue" stroke-width="5" stroke-opacity="1">
-<rect x="10" y="10" width="20" height="20" style="stroke: black; fill: #cfc;">
-    <animate attributeName="width" attributeType="XML" begin="2" dur="2" from="20" to="120" fill="freeze" repeatCount="indefinite"></animate>
-    <animate attributeName="height" attributeType="XML" begin="0" dur="2" end="3" from="20" by="100" fill="freeze"></animate>
-</rect>
-	</g>
-</svg>  -->
-<div style='width:400px;height:200px;'>
-  <span style='float:left;width:auto;height:100%;'>
-  </span>
-</div>
-</div>
 </body>
 
     <script src="jquery-3.1.1.js"></script>
@@ -62,13 +34,17 @@ div {
   <!--   <script src="try.js"></script> -->
 
     <script>
-    
-var obj = {"key":"1","value":"2"};
-var newObj = obj;
-newObj.value += obj.key + 3;
-alert(obj.value);
+      
 
 
+let formData = new FormData();
+    formData.append('key','1');
+    formData.append('key','2');
+    formData.append('key','3');
+    console.log(formData.get('key'));
+    console.log(formData.getAll('key'));
+    console.log(formData.set('key',11111));
+    console.log(formData.getAll('key'));
     </script>
 
 
