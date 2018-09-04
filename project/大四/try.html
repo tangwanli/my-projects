@@ -14,24 +14,32 @@ html,body {
   height: 100%;
   position: relative;
 }
-iframe {
-  width: 100%;
-  height: 100%;
+.wrap {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  border: 1px solid red;
+}
+.left, .right {
   background: red;
-  border: none;
-  overflow: hidden;
+  flex-basis: 100px;
+  
+}
+.middle {
+  flex-grow: 1;
+  background: green;
 }
     </style>
   </head>
   
   <body>
   
-  <form id="myForm" action="" method="post">
-    <input type="text" name="name" value='shenme'>名字
-    <input type="password" name="psw" value='password'>密码
-    <input type="submit" name='sublime' value="提交">
-</form>
-<iframe id='my-iframe' seamless="seamless" frameborder="0" longdesc="https://blog.csdn.net/u012329294/article/details/79280672" src="http://www.w3school.com.cn/tags/tag_iframe.asp"></iframe>
+<div class='wrap'>
+  <div class="left"></div>
+  <div class="middle"></div>
+  <div class="right"></div>
+</div>
+
 </body>
 
     <script src="jquery-3.1.1.js"></script>
@@ -42,12 +50,7 @@ iframe {
     <script>
       
 
-
-    let ifr = document.querySelector('#my-iframe'),
-        ifrWin = ifr.contentWindow,
-        ifrDoc = ifr.contentDocument;
-        let me = ifrDoc.querySelector('#wrapper');
-    console.log(ifrWin,ifrDoc,me);
+console.log(typeof Symbol('a'));
     </script>
 
 
