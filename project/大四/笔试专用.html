@@ -4,7 +4,7 @@
     <!-- 指定字符编码的 meta 必须是 head 的第一个直接子元素 -->
     <meta charset="utf-8">
     <!-- SEO优化 -->
-    <title>Style Guide</title>         <!-- title标签放在charset之后 -->
+    <title>笔试专用</title>         <!-- title标签放在charset之后 -->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
    <!--  <link rel="stylesheet" href="try.css"> -->
     <style type="text/css">
@@ -15,25 +15,45 @@ html,body {
   position: relative;
 }
 
+div {
+  width: 1000px;
+  height: 1000px;
+  font-size: 100px;
+  opacity: 0;
+  border: 1px solid red;
 
+  background: url(meinv9.jpg) no-repeat;
+  background-size: contain;
+  -webkit-background-clip: text;
+}
     </style>
   </head>
   
   <body>
-
-</body>
+<div>sadadadsadadadasdsadadasdassdad</div>
 
 
     <script>
-    
 
+function func(num1,num2) {
+  let state = true,
+      count = 0;
+  if (num1 < num2) {
+    [num1, num2] = [num2, num1];
+  }
+  while(state) {
+    count = num1%num2;
+    if (count != 0) {
+      [num1, num2] = [num2, count];
+    } else {
+      state = false;
+    }
+  }
+  return num2;
 
-/*while(line=readline()){
-    var lines = line.split(' ');
-    var a = parseInt(lines[0]);
-    var b = parseInt(lines[1]);
-    print(a+b);
-}*/
+}
+console.log(func(125,225));
+
 
 
     </script>

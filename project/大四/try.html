@@ -9,40 +9,48 @@
    <!--  <link rel="stylesheet" href="try.css"> -->
     <style type="text/css">
 /* 填写初始CSS代码 */
-html,body {
-
-  height: 100%;
-  position: relative;
+body {
+	width: 200%;
 }
-.wrap {
-  display: flex;
-  width: 500px;
-  height: 500px;
-  border: 1px solid red;
+.animation{
+	position: absolute;
+    left:0;
+    top:100px;
+    width: 500px;
+    height: 500px;
+    background: red;
+    
+  /*  -webkit-animation: 0.5s 0.5s move ease infinite alternate, 0.5s 0.1s demo ease-in 1;*/
+  -webkit-animation: 2s 0.1s move ease 2, 3s 5s demo ease-in;
+/*  transition: 3s 0.1s linear;*/
 }
-.left, .right {
-  background: red;
-  flex-basis: 100px;
-  
+@-webkit-keyframes demo{ /* 关键帧必须加上webkit前缀 */
+    from{left:0;}
+    25%{left:100px;}
+    50%{left:200px;}
+    to{left:400px;}
 }
-.middle {
-  flex-grow: 1;
-  background: green;
+@-webkit-keyframes move{
+    0%{top:0;} 
+    25%{top:100px;}
+    100%{top:400px;} 
 }
     </style>
   </head>
   
-  <body>
+<body>
+  <select>
+    <option>21212</option>
+    <option>12132123131313</option>
+    <option>000000000</option>
+  </select>
+
+  <div class="try animation">this is a test again ellipsis</div>
   
-<div class='wrap'>
-  <div class="left"></div>
-  <div class="middle"></div>
-  <div class="right"></div>
-</div>
 
 </body>
 
-    <script src="jquery-3.1.1.js"></script>
+<!--     <script src="jquery-3.1.1.js"></script> -->
 <!--     <script src="bootstrap-3.3.5/dist/js/bootstrap.min.js"></script>
     <script src="vue.js"></script> -->
   <!--   <script src="try.js"></script> -->
@@ -50,7 +58,7 @@ html,body {
     <script>
       
 
-console.log(typeof Symbol('a'));
+
     </script>
 
 

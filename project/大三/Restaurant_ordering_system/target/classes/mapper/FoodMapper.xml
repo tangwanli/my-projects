@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ros.dao.FoodMapper">
+  <resultMap id="BaseResultMap" type="com.ros.bean.Food">
+    <id column="food_id" jdbcType="INTEGER" property="foodId" />
+    <result column="foodtype_id" jdbcType="INTEGER" property="foodtypeId" />
+    <result column="food_name" jdbcType="VARCHAR" property="foodName" />
+    <result column="food_price" jdbcType="INTEGER" property="foodPrice" />
+    <result column="food_image" jdbcType="VARCHAR" property="foodImage" />
+    <result column="food_ordertimes" jdbcType="INTEGER" property="foodOrdertimes" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    food_id, foodtype_id, food_name, food_price, food_image, food_ordertimes
+  </sql>
+  <select id="selectByExample" parameterType="com.ros.bean.FoodExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tb_food
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_food
+    where food_id = #{foodId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_food
+    where food_id = #{foodId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.ros.bean.FoodExample">
+    delete from tb_food
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.ros.bean.Food">
+    insert into tb_food (food_id, foodtype_id, food_name, 
+      food_price, food_image, food_ordertimes
+      )
+    values (#{foodId,jdbcType=INTEGER}, #{foodtypeId,jdbcType=INTEGER}, #{foodName,jdbcType=VARCHAR}, 
+      #{foodPrice,jdbcType=INTEGER}, #{foodImage,jdbcType=VARCHAR}, #{foodOrdertimes,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.ros.bean.Food">
+    insert into tb_food
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="foodId != null">
+        food_id,
+      </if>
+      <if test="foodtypeId != null">
+        foodtype_id,
+      </if>
+      <if test="foodName != null">
+        food_name,
+      </if>
+      <if test="foodPrice != null">
+        food_price,
+      </if>
+      <if test="foodImage != null">
+        food_image,
+      </if>
+      <if test="foodOrdertimes != null">
+        food_ordertimes,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="foodId != null">
+        #{foodId,jdbcType=INTEGER},
+      </if>
+      <if test="foodtypeId != null">
+        #{foodtypeId,jdbcType=INTEGER},
+      </if>
+      <if test="foodName != null">
+        #{foodName,jdbcType=VARCHAR},
+      </if>
+      <if test="foodPrice != null">
+        #{foodPrice,jdbcType=INTEGER},
+      </if>
+      <if test="foodImage != null">
+        #{foodImage,jdbcType=VARCHAR},
+      </if>
+      <if test="foodOrdertimes != null">
+        #{foodOrdertimes,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.ros.bean.FoodExample" resultType="java.lang.Long">
+    select count(*) from tb_food
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update tb_food
+    <set>
+      <if test="record.foodId != null">
+        food_id = #{record.foodId,jdbcType=INTEGER},
+      </if>
+      <if test="record.foodtypeId != null">
+        foodtype_id = #{record.foodtypeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.foodName != null">
+        food_name = #{record.foodName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.foodPrice != null">
+        food_price = #{record.foodPrice,jdbcType=INTEGER},
+      </if>
+      <if test="record.foodImage != null">
+        food_image = #{record.foodImage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.foodOrdertimes != null">
+        food_ordertimes = #{record.foodOrdertimes,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update tb_food
+    set food_id = #{record.foodId,jdbcType=INTEGER},
+      foodtype_id = #{record.foodtypeId,jdbcType=INTEGER},
+      food_name = #{record.foodName,jdbcType=VARCHAR},
+      food_price = #{record.foodPrice,jdbcType=INTEGER},
+      food_image = #{record.foodImage,jdbcType=VARCHAR},
+      food_ordertimes = #{record.foodOrdertimes,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ros.bean.Food">
+    update tb_food
+    <set>
+      <if test="foodtypeId != null">
+        foodtype_id = #{foodtypeId,jdbcType=INTEGER},
+      </if>
+      <if test="foodName != null">
+        food_name = #{foodName,jdbcType=VARCHAR},
+      </if>
+      <if test="foodPrice != null">
+        food_price = #{foodPrice,jdbcType=INTEGER},
+      </if>
+      <if test="foodImage != null">
+        food_image = #{foodImage,jdbcType=VARCHAR},
+      </if>
+      <if test="foodOrdertimes != null">
+        food_ordertimes = #{foodOrdertimes,jdbcType=INTEGER},
+      </if>
+    </set>
+    where food_id = #{foodId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ros.bean.Food">
+    update tb_food
+    set foodtype_id = #{foodtypeId,jdbcType=INTEGER},
+      food_name = #{foodName,jdbcType=VARCHAR},
+      food_price = #{foodPrice,jdbcType=INTEGER},
+      food_image = #{foodImage,jdbcType=VARCHAR},
+      food_ordertimes = #{foodOrdertimes,jdbcType=INTEGER}
+    where food_id = #{foodId,jdbcType=INTEGER}
+  </update>
+</mapper>

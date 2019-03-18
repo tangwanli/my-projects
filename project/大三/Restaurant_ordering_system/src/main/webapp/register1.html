@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>用户注册</title>
+<link rel="shortcut icon" href="./images/favicon.ico">
+<style type="text/css">
+body {
+
+	font-family: "幼圆";
+	font-size: 25px;
+	color: white;
+}
+
+form {
+	line-height: 3em;
+	position: relative;
+}
+
+div {
+	text-align: center;
+}
+
+h1 {
+	letter-spacing: 15px;
+}
+
+.input {
+	font-family: "幼圆";
+	font-size: 25px;
+	color: white;
+}
+
+.context {
+	background-image: url("images/bp2.jpg");
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+button {
+    
+	
+	font-family:"幼圆";
+	font-size:30px;
+	color:white;
+	margin-top:50px;
+	background-color : transparent;   
+    text-decoration:underline;
+    border:none;
+}
+ .box01{
+    background-color : transparent;   
+    border-bottom : 1px  solid gray;   
+    border-right-width : 0px;  
+    border-left-width : 0px;
+    border-top-width : 0px;
+    border-top-style : none;
+    border-right-style : none;
+    border-left-style : none;
+    padding : 0px;
+    margin : 0;
+}
+.box02{
+    background-color : transparent;   
+    border-bottom : 1px  solid gray;   
+    border-right : 1px  solid gray;  
+    border-left : 1px  solid gray;
+    border-top : 1px  solid gray;
+    
+    padding : 0px;
+    margin : 0;
+}
+.firstPoint {
+	position: absolute;
+	top: 180px;
+	left: 920px;
+}
+
+</style>
+</head>
+<body>
+	<div class="context">
+		<form>
+			<h1 align="center">新用户请注册</h1>
+
+			<label>请选择用餐地区：</label> 
+			<select
+				style="width: 75px; height: 30px; font-size: 24px; color: white;font-family:"幼圆"" class="box02">
+				<option value='广州'>广州</option>
+				<option value='北京'>北京</option>
+				<option value='上海'>上海</option>
+				<option value='重庆'>重庆</option>
+				<option value='深圳'>深圳</option>
+			</select>
+			<br /> 姓名：<input type="text"  
+			    name="username" placeholder="请输入用户名..."
+				style="width: 210px; height: 23px; font-size: 19px; color: white" class="box01 username"><span class='firstPoint'></span>
+			<br /> 密码：<input type="password" 
+				style="width: 210px; height: 23px; font-size: 19px; color: white"
+				name="psw" class="box01 password"> <br /> 电话：<input type="text" 
+				style="width: 210px; height: 23px; font-size: 19px; color: white"
+				name="phone" class="box01 phone"> <br /> 邮箱：<input type="text" 
+				style="width: 210px; height: 23px; font-size: 19px; color: white"
+				name="email" class="box01 email">  <br />
+			<div>
+				<button class='register' style="margin-right:60px">注 册</button>
+				<button class='reset'>重 置</button>
+				<!-- <input type="submit" style="margin-right:40px;width:120px;height:40px;background:white"name="register" 
+value="注  册" class="input" > -->
+				<!-- <input type="submit"
+					style="width: 120px; height: 40px; background: white" name="reset"
+					value="重  置" class="input"> -->
+			</div>
+		</form>
+	</div>
+	  <script src="./js/jquery.min.js"></script>
+	  	  <script src="./js/register.js"></script>
+</body>
+</html>

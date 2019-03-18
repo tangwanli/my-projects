@@ -1,0 +1,297 @@
+/*
+全局css
+ */
+
+a:hover {
+  text-decoration: none;
+}
+
+  body {
+    width: 100%;
+    background: #fff;
+    
+  }
+
+
+
+  /* 头部 */
+  .top {
+    width: 100%;
+    height: 119px;
+  }
+
+  .top-bag {
+    position: relative;
+    width: 60%;
+    height: 119px;
+  }
+
+  .top-information {
+    width: 60%;
+    height: 82px;
+    padding-top: 1.64%; 
+  }
+
+  .top-information li {
+    float: left;
+  }
+
+  .logo {
+    width: 88px;
+    height: 82px;
+  }
+
+  .bgadd2 {
+    width: 1px;
+    height: 58px;
+    margin: 1.18% 1.64% 0 1.62%;
+    background: #d9d9d9;
+  }
+
+  .com-intrbag {
+    width: 337px;
+    height: 58px;
+    padding: 1.18% 9% 0 0;
+  }
+
+  .comname {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 24px;
+    font-family: Adobe 黑体 Std R;
+    color: #333;
+  }
+
+  .comaim {
+    display: inline-block;
+    height: 29px;
+    line-height: 29px;
+    font-size: 18px;
+    font-family: Adobe 黑体 Std R;
+    color: #808080;
+  }
+
+  .shopping {
+    position: relative;
+    top: 30%;
+    left: 30%;
+    width: 60px;
+    height: 85px;
+  }
+
+  .shopcart-num {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.5s ease-in;
+    background: pink;
+    color: grey;
+  }
+
+  .shopcart-num:hover {
+    box-shadow: 0 0 20px red;
+    background: red;
+  }
+
+  
+  .login {
+    position: relative;
+    top: 30%;
+    left: 40%;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 10px/50%;
+    box-shadow: 0 0 10px grey,
+                0 0 10px grey inset;
+    text-shadow: 0 0 10px grey;
+    transition: 1s ease-in;
+    background: white;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background: grey;
+  }
+  .btn a {
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+  }
+
+
+
+
+  /* 导航 */
+  .nav {
+    position: relative;
+    width: 100%;
+    height: 49px;
+    background: #77262f;
+  }
+  
+  .nav-block {
+    width: 60%;
+    margin-left: 20%;
+    height: 49px;
+  }
+
+  .nav-block li {
+    float: left;
+    display:inline-block;
+    width: 121px;
+    line-height: 49px;
+    text-align: center;
+    font-size: 18px;
+    transition: 1s ease-in;
+    cursor: pointer;
+  }
+  .nav-block li a {
+    font-size: 18px;
+  }
+
+  .actopt, .nav-block li:hover {
+    opacity: 0.7;
+    background: #7c817e;
+    text-decoration: none;
+  }
+
+ /* 食物模块 */
+  .food-box {
+    width: 60%;
+    height: 727px;
+    margin: 0 auto;
+    background: #f2f2f2;
+  }
+
+  .food-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    overflow: hidden;
+  }
+
+  .food-det {
+    position: relative;
+    width: 20%;
+    height: 260px;
+    text-align: center;
+    color: red;
+    transition: 1s;
+  }
+
+  .food-det:hover {
+    outline: 1px solid #d3d1d1;
+    background: #e4e1e1;
+  }
+
+  .food-det img {
+    margin-top: 7%;
+  }
+
+  .food-det div {
+    color: black;
+  }
+  .food-det div:nth-of-type(1) {
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    text-indent: 23px;
+  }
+  .food-det div:nth-of-type(2) {
+    text-align: left;
+    text-indent: 35px;
+    color: grey;
+  }
+  .food-det div:nth-of-type(2) span {
+    font-size: 15px;
+    color: grey;
+  }
+  .food-det div:nth-of-type(3) {
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    text-indent: 23px;
+  }
+  .food-det div:nth-of-type(3) span {
+    font-size: 20px;
+    color: red;
+  }
+
+  .add-btn {
+    position: absolute;
+    bottom: 17px;
+    right: 26px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 40%;
+    text-align: center;
+    font-size: 40px;
+    background: yellow;
+    cursor: pointer;
+    transition: 1s ease-out;
+  }
+  .add-btn:hover {
+    background: red;
+    color: grey;
+  }
+
+  .food-num {
+    position: absolute;
+    top: 214px;
+    left: 121px;
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+  }
+
+
+
+  /* footer */
+  .footer {
+    width: 100%;
+    height: 111px;
+    background: #77262f;
+  }
+
+  .station-nav {
+    display: flex;
+    justify-content: center;
+    width: 998px;
+    height: 58px;
+  }
+
+  .station-nav li {
+    float: left;
+    padding-right: 4.81%;
+    height: 58px;
+    line-height: 58px;
+    font-size: 16px;
+  }
+  .station-nav li a {
+    font-size: 16px;
+  }
+
+  .station-nav .changeit2 {
+    padding: none;
+  }
+
+  .footer1 {
+    text-align: center;
+    height: 22px;
+    line-height: 22px;
+  }
