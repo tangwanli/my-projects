@@ -17,11 +17,15 @@ body {
     left:0;
     top:100px;
     width: 500px;
-    height: 500px;
-    background: red;
+    line-height: 500px;
+    border: 1px solid;
+    color: red;
+    font-size: 50px;
+    text-align: center;
+    text-decoration: blink;
     
   /*  -webkit-animation: 0.5s 0.5s move ease infinite alternate, 0.5s 0.1s demo ease-in 1;*/
-  -webkit-animation: 2s 0.1s move ease 2, 3s 5s demo ease-in;
+ /* -webkit-animation: 2s 0.1s move ease 2, 3s 5s demo ease-in;*/
 /*  transition: 3s 0.1s linear;*/
 }
 @-webkit-keyframes demo{ /* 关键帧必须加上webkit前缀 */
@@ -35,17 +39,33 @@ body {
     25%{top:100px;}
     100%{top:400px;} 
 }
+.wrap {
+	display: flex;
+	width: 1800px;
+	height: 1000px;
+}
+.wrap div:nth-of-type(1) {
+	flex: 0 1 10%;
+    background: red;
+}
+.wrap div:nth-of-type(2) {
+	flex-grow: 1;
+    background: yellow;
+}
+.wrap div:nth-of-type(3) {
+	flex: 0 1 10%;
+    background: blue;
+}
     </style>
   </head>
   
 <body>
-  <select>
-    <option>21212</option>
-    <option>12132123131313</option>
-    <option>000000000</option>
-  </select>
 
-  <div class="try animation">this is a test again ellipsis</div>
+  <div class="wrap">
+  	<div class="left"><div>say some thing</div></div>
+  	<div class="main"></div>
+  	<div class="right"></div>
+  </div>
   
 
 </body>
@@ -56,6 +76,15 @@ body {
   <!--   <script src="try.js"></script> -->
 
     <script>
+      let divWrap = document.querySelector('.wrap'),
+          wrapChild = divWrap.querySelectorAll('.wrap > div'),
+          len = wrapChild.length;
+          for (var i=len;i--;) {
+          	wrapChild[i].onclick = function() {
+          		console.log(i);
+          	}
+          }
+          
       
 
 
