@@ -56,16 +56,22 @@ body {
 	flex: 0 1 10%;
     background: blue;
 }
+.b1 {
+    width:0;
+    height: 0;
+    font-size: 0;
+    border-left: 100px solid green;
+    border-bottom: 100px solid red;
+    border-right: 100px solid blue;
+  }
     </style>
   </head>
   
 <body>
 
-  <div class="wrap">
-  	<div class="left"><div>say some thing</div></div>
-  	<div class="main"></div>
-  	<div class="right"></div>
-  </div>
+  
+   <b class="b1"></b>
+
   
 
 </body>
@@ -76,14 +82,7 @@ body {
   <!--   <script src="try.js"></script> -->
 
     <script>
-      let divWrap = document.querySelector('.wrap'),
-          wrapChild = divWrap.querySelectorAll('.wrap > div'),
-          len = wrapChild.length;
-          for (var i=len;i--;) {
-          	wrapChild[i].onclick = function() {
-          		console.log(i);
-          	}
-          }
+
           
       
 

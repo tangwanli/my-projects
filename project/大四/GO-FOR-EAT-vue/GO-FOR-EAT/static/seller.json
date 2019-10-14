@@ -1,0 +1,51 @@
+{
+  "seller": {
+    "name": "还是这个名字好",
+    "description": "快点送来",
+    "deliveryTime": 38,
+    "score": 4.3,
+    "serviceScore": 4.1,
+    "foodScore": 4.4,
+    "rankRate": 69.2,
+    "minPrice": 20,
+    "deliveryPrice": 20000000,
+    "ratingCount": 24,
+    "sellCount": 90,
+    "bulletin": "快点点餐把，不点餐就饿了，饿了就不能点餐了，不能点餐又饿了，饿了又不能点餐了",
+    "supports": [
+      {
+        "type": 0,
+        "description": "本店优惠很大"
+      },
+      {
+        "type": 1,
+        "description": "所有都不打折"
+      },
+      {
+        "type": 2,
+        "description": "只有双人餐"
+      },
+      {
+        "type": 3,
+        "description": "想要发票吗？？？？？？？是不可能的"
+      },
+      {
+        "type": 4,
+        "description": "食品安全嘛，就。。。。。。。。。。。"
+      }
+    ],
+    "avatar": "http://static.galileo.xiaojukeji.com/static/tms/seller_avatar_256px.jpg",
+    "pics": [
+      "http://fuss10.elemecdn.com/8/71/c5cf5715740998d5040dda6e66abfjpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/b/6c/75bd250e5ba69868f3b1178afbda3jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/f/96/3d608c5811bc2d902fc9ab9a5baa7jpeg.jpeg?imageView2/1/w/180/h/180",
+      "http://fuss10.elemecdn.com/6/ad/779f8620ff49f701cd4c58f6448b6jpeg.jpeg?imageView2/1/w/180/h/180"
+    ],
+    "infos": [
+      "不支持发票",
+      "吃东西的",
+      "到处都是地址",
+      "营业时间:10:00-10:01"
+    ]
+  }
+}

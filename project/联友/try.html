@@ -1,0 +1,71 @@
+  <!DOCTYPE html>
+  <html lang="zh-cmn-Hans">
+  <head>
+    <!-- 指定字符编码的 meta 必须是 head 的第一个直接子元素 -->
+    <meta charset="utf-8">
+    <!-- SEO优化 -->
+    <title>Style Guide</title>         <!-- title标签放在charset之后 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+   <!--  <link rel="stylesheet" href="try.css"> -->
+   <style>
+      .is-selected {
+   
+      }
+    </style>
+  </head>
+  
+<body>
+
+  <el-row id="app">
+      <el-calendar>
+          <!-- 这里使用的是 2.5 slot 语法，对于新项目请使用 2.6 slot 语法-->
+          <template
+            slot="dateCell"
+            slot-scope="{date, data}">
+            <p :class="data.isSelected ? 'is-selected' : ''">
+              {{ data.day.split('-').slice(1).join('-') }} {{ data.isSelected ? '✔️' : ''}}
+            </p>
+            <el-button>a</el-button>
+          </template>
+        </el-calendar>
+
+
+</el-row>
+  
+
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</body>
+
+<!--     <script src="jquery-3.1.1.js"></script> -->
+<!--     <script src="bootstrap-3.3.5/dist/js/bootstrap.min.js"></script>
+    <script src="vue.js"></script> -->
+  <!--   <script src="try.js"></script> -->
+
+    <script>
+    new Vue({
+      el: '#app',
+      data() {
+      return {
+        reverse: true,
+        activities: [{
+          content: '活动按期开始',
+          timestamp: '2018-04-15'
+        }, {
+          content: '通过审核',
+          timestamp: '2018-04-13'
+        }, {
+          content: '创建成功',
+          timestamp: '2018-04-11'
+        }]
+      };
+    }
+    })
+  </script>
+
+
+  </body>
+  
+  </html>
