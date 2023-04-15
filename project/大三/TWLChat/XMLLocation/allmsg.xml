@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<allmsg> 
+  <message> 
+    <from>T@twl.hero</from>  
+    <to>W@twl.hero</to>  
+    <content>dsadsad</content> 
+  </message>  
+  <message> 
+    <from>W@twl.hero</from>  
+    <to>T@twl.hero</to>  
+    <content>dsadsad</content> 
+  </message>  
+  <message>
+    <from>W@twl.hero</from>
+    <to>T@twl.hero</to>
+    <content>dsadsadsa</content>
+  </message>
+</allmsg>

@@ -17,3 +17,9 @@
         border: 1px dotted blue;
         margin: 10% 0 0 10%;
     }
+
+    .triangle {
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
